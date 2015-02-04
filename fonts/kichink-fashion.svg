@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="kichink-fashion" horiz-adv-x="1000" >
+<font-face font-family="kichink-fashion" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="menu" unicode="&#xe800;" d="m950 601v-20h-900v20h900z m-900-261h900v20h-900v-20z m0-241h900v20h-900v-20z" horiz-adv-x="1000" />
+<glyph glyph-name="cart" unicode="&#xe801;" d="m950 732v-20h-100c-5 0-9-4-10-8l-13-105c-3-25-24-43-49-43h-670c-15 0-30-7-39-20-9-12-12-29-7-43l61-196c6-20 28-34 49-30l2 0 562 0c24-4 37-25 37-56 0-26-11-44-35-55l-2-1h-550v20h545c16 8 21 18 21 37 0 12-3 33-20 37h-557c-30-4-62 15-71 44l-61 194c-6 21-3 44 10 61 13 18 34 28 55 28h670c15 0 27 11 29 26l13 105c2 15 14 26 29 26h101z m-186-419l20-2 20 176-20 2-20-176z m10-273c0-40-32-72-72-72s-72 32-72 72 32 72 72 72 72-33 72-72z m-20 0c0 29-23 52-52 52s-52-24-52-52 23-52 52-52 52 23 52 52z m-415 0c0-40-32-72-72-72-40 0-72 32-72 72s32 72 72 72c40 0 72-33 72-72z m-20 0c0 29-23 52-52 52s-52-23-52-52 23-52 52-52 52 23 52 52z" horiz-adv-x="1000" />
+<glyph glyph-name="chevron-down" unicode="&#xe802;" d="m957 595l-457-512-457 512 15 13 442-495 443 496 14-14z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>
