@@ -37,9 +37,7 @@
 							</a>
 						</div>
 						<div class="[ columna xmall-6 ][ text-right ][ menu__item ]">
-							<a id="carrito_button" href="#">
-								<i class="icon-cart"></i>
-							</a>
+							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
 				</div>
@@ -60,9 +58,7 @@
 							<a href="#" class="">
 								<i class="icon-help"></i>
 							</a>
-							<a id="carrito_button" href="#">
-								<i class="icon-cart"></i>
-							</a>
+							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
 				</div><!-- .wrapper -->
@@ -80,7 +76,9 @@
 						<i class="icon-angle-down"></i>
 					</a>
 				</section><!-- cover -->
+
 				<section class="[ product-grid ] [ row ]">
+					<ul id="items" class="row"></ul> 
 					<article class="[ product ] [ columna xmall-12 medium-4 large-3 ]">
 						<!-- NOTICES -->
 						<div class="[ ribbon ]">
@@ -143,15 +141,25 @@
         <script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
         <script>
         $(document).ready(function(){
-			$("#carrito_button").ShoppingKart({
-				text: '<img src="https://s3.amazonaws.com/kchnk-themes/aires-de-campo/img/carrito-verde.png"/>',
+        	// Carga carrito dinámicamente
+			$(".carrito_button").ShoppingKart({
+				text: '<i class="icon-cart"></i>',
 				store_id: '<?= @$store->id ?>',
 				button: "#buy_button",
 				placement: "right",
 				checkoutURI: "https://www.kichink.com/checkout",
 				showOnPurchase: true,
 				});
-			})
+			});
+
+        	// Carga productos dinámicamente
+        	var store_id = 146;
+			$("#items").GridProdukts({
+				store_id: store_id,
+				limit: 24,
+				pagination: "scroll",
+				remoteURI:"https://www.kichink.com"
+			});
         </script>
 	</body>
 </html>
