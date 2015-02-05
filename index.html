@@ -9,6 +9,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="cleartype" content="on">
+
+		<!-- Lo requiere Kichink! -->
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/searchbox.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/shoppingcart.css" />
+        <link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/login.css" />
+        <link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/smoothprodukts.css" />
+
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<!-- -->
 		<!-- #Typekit code goes here -->
@@ -28,7 +37,7 @@
 							</a>
 						</div>
 						<div class="[ columna xmall-6 ][ text-right ][ menu__item ]">
-							<a href="#" class="">
+							<a id="carrito_button" href="#">
 								<i class="icon-cart"></i>
 							</a>
 						</div>
@@ -58,7 +67,7 @@
 							<a href="#" class="">
 								<i class="icon-help"></i>
 							</a>
-							<a href="#" class="">
+							<a id="carrito_button" href="#">
 								<i class="icon-cart"></i>
 							</a>
 						</div>
@@ -121,12 +130,35 @@
 		</div><!-- container -->
 		<footer>
 			<div class="[ wrapper ]">
-				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="images/k.png" alt=""></p>
+				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="#" alt=""></p>
 				<div class="[ text-center ]">
 					<a class="[ inline-block ]" href="#">Términos y condiciones</a>
 					<a class="[ inline-block ]" href="#">Políticas de privacidad</a>
 				</div>
 			</div>
 		</footer>
+
+		<!-- scripts de Kichink! -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="//www.kichink.com/v2/themes/js/loginForm.js"></script>
+        <script type="text/javascript" src="//www.kichink.com/v2/themes/js/searchbox.js"></script>
+        <script type="text/javascript" src="//www.kichink.com/v2/themes/js/gridProdukts.js?v=<?= @$v ?>"></script>
+        <script type="text/javascript" src="//www.kichink.com/v2/themes/js/shoppingkart.js?v=<?= @$v ?>"></script>
+        <script type="text/javascript" src="//www.kichink.com/js/jquery.callapi.js"></script>
+        <script type="text/javascript" src="//www.kichink.com/assets_verticales/js/ajaxq.jquery.js"></script>
+        <script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
+        <script>
+        $(document).ready(function(){
+			$("#carrito_button").ShoppingKart({
+				text: '<img src="https://s3.amazonaws.com/kchnk-themes/aires-de-campo/img/carrito-verde.png"/>',
+				store_id: '<?= @$store->id ?>',
+				button: "#buy_button",
+				placement: "right",
+				checkoutURI: "https://www.kichink.com/checkout",
+				showOnPurchase: true,
+				});
+			})
+        </script>
 	</body>
 </html>
