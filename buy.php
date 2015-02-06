@@ -1,5 +1,10 @@
 <?php
 	$item_id = $_GET["id"];
+	$store->id 				= 146;
+	$store->name 			= "ALEXIA ULIBARRI";
+	$store->description 	= "Simona FW14";
+	$store->logo 			= "images/logo-tienda.jpg";
+	$store->cover 			= "images/cover-tienda.jpg";
 ?>
 
 <!DOCTYPE html>
@@ -32,65 +37,76 @@
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div class="[ container ]" id="item-container">
-			<header class="[ header-front ]">
+		<div id="item-container" class="[ container ]">
+			<div id="sidr" class="[ sidr ]">
+				<ul>
+					<div class="[ shown--small ]">
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-lang ]"></i> Idioma/Moneda
+							</a>
+						</li>
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-login ]"></i> Login
+							</a>
+						</li>
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-help ]"></i> Ayuda
+							</a>
+						</li>
+					</div><!-- shown--small -->
+					<li><a href="#">Hombres</a></li>
+					<li><a href="#">Mujéres</a></li>
+					<li><a href="#">Niños</a></li>
+					<li><a href="#">Joyería</a></li>
+				</ul>
+			</div><!-- sidr -->
+			<header class="[ ]">
 				<div class="[ wrapper ] [ shown--small ]">
 					<div class="[ row ]">
 						<div class="[ columna xmall-4 ][ menu__item ]">
-							<a href="#">
-								<i class="icon-menu"></i>
+							<a class="[ menu ]" href="#">
+								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
-						<div class="[ columna xmall-4 ]">
-							<h1>
-								<a href="/">
-									<img class="[ img-circle ][ center ]" src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
+						<div class="[ columna xmall-4 ][ menu__item ]">
+							<h1 class="">
+								<a class="[ block center ]" href="/">
+									<img class="[ img-circle ][ block center ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
 								</a>
 							</h1>
 						</div>
-						<div class="[ columna xmall-4 ][ text-right ][ menu__item ]">
-							<a class="[ carrito_button ]" href="#"></a>
-						</div>
+						<div class="[ columna xmall-4 ][ text-right ][ menu__item ][ cart ]"></div>
 					</div>
 				</div>
 				<div class="[ wrapper ][ shown--medium ]">
 					<div class="[ row ]">
-						<div class="[ columna xmall-4 ][ text-left ][ menu__item ]">
-							<a href="/" class="">
-								<i class="icon-menu"></i>
+						<div class="[ columna xmall-6 ][ text-left ][ menu__item ]">
+							<a href="/" class="[ menu ]">
+								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
-						<div class="[ columna xmall-4 ]">
-							<h1>
-								<a href="/">
-									<img class="[ img-circle ][ center ]" src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
-								</a>
-							</h1>
-						</div>
-						<div class="[ columna xmall-4 ][ ][ text-right ][ menu__item ]">
+						<div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
 							<a href="#" class="">
-								<i class="icon-lang"></i>
+								<i class="[ icon-lang ]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="icon-login"></i>
+								<i class="[ icon-login ]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="icon-help"></i>
+								<i class="[ icon-help ]"></i>
 							</a>
-							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
-					<h2 class="[ text-center ]">ALEXIA ULIBARRI</h2>
 				</div><!-- .wrapper -->
 			</header>
-			<div class="[ main ] [ row ]" >
+			<div class="[ main ]">
 				<section class="[ slider ]">
 					<div class="sp-wrap"></div>
-<!-- 					<img src="images/producto.jpg" alt="">
-					<img src="images/producto.jpg" alt="">
-					<img src="images/producto.jpg" alt=""> -->
 				</section><!-- cover -->
-				<section>
+				<section class="[ wrapper ]">
 					<article class="[ product__info ] [ row ]" id="item-detail">
 						<div class="[ product__info--name ] [ columna xmall-6 ]">
 							<h2 class="[ text-center ] [ title ]">Hello?</h2>
@@ -102,16 +118,16 @@
 							<p class="[  ]"></p>
 						</div><!-- product__info--price -->
 					</article>
-					<article class="[ product__options ] [ row ]">
+					<article class="[ product__options ] [ row ] [ margin-bottom ]">
 						<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
 						<div id="opc" class="btn-group" data-toggle="buttons"></div>
 						<p class="[ text-center font-serif ]">Tallas</p>
 						<div class="[ text-center ]">
-							<a href="#" class="[ inline-block ] [ disabled ]">XS</a>
-							<a href="#" class="[ inline-block ]">S</a>
-							<a href="#" class="[ inline-block ] [ selected ]">M</a>
-							<a href="#" class="[ inline-block ]">L</a>
-							<a href="#" class="[ inline-block ] [ disabled ]">XL</a>
+							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
+							<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
+							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
+							<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
+							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
 						</div>
 						<p class="[ text-center font-serif ]">Colores</p>
 						<div class="[ text-center ]">
@@ -123,14 +139,14 @@
 					<article class="[ product__extra ] [ row ]">
 						<h2 class="[ text-center ]">Información adicional</h2>
 						<p class="[ text-center font-serif ]">Disponibilidad</p>
-						<p>Disponible inmediatamente</p>
+						<p class="[ text-center ]">Disponible inmediatamente</p>
 						<p class="[ text-center font-serif ]">Formas de pago</p>
-						<p>Tarjeta de crédito y efectivo</p>
+						<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
 					</article>
 					<article class="[ product__buy ] [ row ]">
 						<h2 class="[ text-center font-serif ]">$1,200</h2>
 						<div class="[ text-center ]">
-							<a href="#" class="[ boton ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
+							<a href="#" class="[ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 						</div>
 					</article>
 				</section><!-- product-grid -->
@@ -179,9 +195,9 @@
             });
 
             // Carga carrito dinámicamente
-			$(".carrito_button").ShoppingKart({
+			$(".cart").ShoppingKart({
 				text: '<i class="icon-cart"></i>',
-				store_id: store_id,
+				store_id: '<?= @$store->id ?>',
 				button: "#buy_button",
 				placement: "right",
 				checkoutURI: "https://www.kichink.com/checkout",
@@ -317,7 +333,7 @@
 				$("#item-container").find("a.tw").attr("href", "https://twitter.com/intent/tweet?hashtags=Kichink,ILoveOnlineShopping&text=He%20visto%20" + data.name + "%20en%20" + store_name + "&url=https://www.kichink.com/buy/" + data.id);
 				$('.sp-wrap').Smoothprodukts({
 					data: data,
-					type: "thumbnails"
+					type: "transition"
 				});
 
 				$("#item-container").animate({bottom: 0}, time, function() {});
