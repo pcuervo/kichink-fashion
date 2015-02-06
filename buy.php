@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$item_id = $_GET["id"];
 ?>
 
@@ -152,9 +152,9 @@
     <script type="text/javascript" src="//www.kichink.com/assets_verticales/js/ajaxq.jquery.js"></script>
     <script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
 	<script>
-		$(document).ready(function() {      
-			var store_id = 146;  
-			var item_id = <?php echo $item_id; ?>    
+		$(document).ready(function() {
+			var store_id = 146;
+			var item_id = <?php echo $item_id; ?>;
             $.ajax({
                 type: "POST",
                 data: {
@@ -174,7 +174,7 @@
         });
 
         function load_item(data, animated) {
-            if (data != undefined) { 
+            if (data != undefined) {
                 v = window.location.pathname.split("/");
                 var time = 1000;
                 $("#item-container").show();
@@ -265,11 +265,12 @@
                     if (data.purchase_options[0].length > 0) {
                         $(".opcioncompra").show();
                         for (var it in data.purchase_options[0]) {
-                            $(".opcioncompra #opc").append('<label data-label="' + data.purchase_options[0][it].label.toLowerCase() + '" class="btn btn-default ' + ((data.purchase_options[0][it].units > 0) ? "" : "disabled") + '"><input type="radio" ' + ((data.purchase_options[0][it].units > 0) ? "" : "disabled") + ' name="options" id="option1" value="' + data.purchase_options[0][it].po_label + '">' + data.purchase_options[0][it].label + '</label>');
+                            $(".opcioncompra #opc").append('<label data-label="' + data.purchase_options[0][it].label.toLowerCase() + '" class="[ boton ] ' + ((data.purchase_options[0][it].units > 0) ? "" : "disabled") + '"><input type="radio" ' + ((data.purchase_options[0][it].units > 0) ? "" : "disabled") + ' name="options" id="option1" value="' + data.purchase_options[0][it].po_label + '">' + data.purchase_options[0][it].label + '</label>');
                         }
                     }
-                } else 
+                } else {
                 	$(".opcioncompra").hide();
+                }
 
                 $("#opc").find("label").each(function(i, e) {
                     if (!$(e).hasClass("disabled")) {
