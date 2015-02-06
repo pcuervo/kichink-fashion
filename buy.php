@@ -9,6 +9,13 @@
 		<title>Tu tienda - Kichink!</title>
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
+
+		<!-- Lo requiere Kichink! -->
+		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/searchbox.css" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/shoppingcart.css" />
+		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/login.css" />
+		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/smoothprodukts.css" />
+
 		<meta name="description" content="">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,9 +49,7 @@
 							</h1>
 						</div>
 						<div class="[ columna xmall-4 ][ text-right ][ menu__item ]">
-							<a href="#" class="">
-								<i class="icon-cart"></i>
-							</a>
+							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
 				</div>
@@ -72,9 +77,7 @@
 							<a href="#" class="">
 								<i class="icon-help"></i>
 							</a>
-							<a href="#" class="">
-								<i class="icon-cart"></i>
-							</a>
+							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
 					<h2 class="[ text-center ]">ALEXIA ULIBARRI</h2>
@@ -158,23 +161,33 @@
 		$(document).ready(function() {
 			var store_id = 146;
 			var item_id = <?php echo $item_id; ?>;
-			$.ajax({
-				type: "POST",
-				data: {
-					store_id: store_id,
-					limit: 1,
-					item_id: item_id,
-					offset: 0
-				},
-				url: "https://www.kichink.com/api/stores/get_store_items",
-				success: function(data) {
-					$("#loading-items").hide();
-					var ajax_request = jQuery.parseJSON(data.toString());
-					console.log(ajax_request.data[0]);
-					load_item(ajax_request.data[0], false);
-				}
+            $.ajax({
+                type: "POST",
+                data: {
+                    store_id: store_id,
+                    limit: 1,
+                    item_id: item_id,
+                    offset: 0
+                },
+                url: "https://www.kichink.com/api/stores/get_store_items",
+                success: function(data) {
+                    $("#loading-items").hide();
+                    var ajax_request = jQuery.parseJSON(data.toString());
+                    console.log(ajax_request.data[0]);
+                    load_item(ajax_request.data[0], false);
+                }
+            });
+
+            // Carga carrito dinámicamente
+			$(".carrito_button").ShoppingKart({
+				text: '<i class="icon-cart"></i>',
+				store_id: store_id,
+				button: "#buy_button",
+				placement: "right",
+				checkoutURI: "https://www.kichink.com/checkout",
+				showOnPurchase: true,
 			});
-		});
+        });
 
 		function load_item(data, animated) {
 			if (data != undefined) {
