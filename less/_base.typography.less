@@ -1,20 +1,24 @@
 /*------------------------------------*\
-    #FONTFACE
+    #TYPEKIT
 \*------------------------------------*/
 
-// @font-face {
-// 	font-family: 'font-name';
-// 	src: url('fonts/font-name.eot');
-// 	src: url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
-// 		url('fonts/font-name.woff2') format('woff2'),
-// 		url('fonts/font-name.woff') format('woff'),
-// 		url('fonts/font-name.ttf') format('truetype'),
-// 		url('fonts/font-name.svg#font-name') format('svg');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+/**
+ * MAIN SERIF FONT
+**/
+// font-family: "kepler-std",serif;
+// font styles:
+//		regular: 400
 
 
+/**
+ * MAIN SANS SERIF FONT
+**/
+// font-family: "proxima-nova",sans-serif;
+// font styles:
+//		thin: 				100 / normal
+//		thin italic: 		100 / italic
+//		semibold: 			600 / normal
+//		semibold italic: 	600 / italic
 
 
 /*------------------------------------*\
@@ -24,17 +28,30 @@
 /**
  * HTML general elements
 **/
-body{ font-family: 'font-name'; color: @dark; }
+body{
+	.font( 16px, 20px, 100, 'proxima nova' );
+	color: @dark;
+}
 
 /**
  * Headers
 **/
+
+h1, h2, h3, h4, h5, h6{
+	margin-top: 0;
+	font-family: 'proxima nova';
+}
+
 h1{
 	margin: 0;
 }
-h2, h3, h4, h5, h6{
-	margin-top: 0;
-	//font-family: '';
+
+h2{
+	.font( 26px, 30px, 600, 'proxima nova' ); letter-spacing: 2px;
+}
+
+h3{
+	.font( 24px, 28px, );
 }
 
 
@@ -60,7 +77,7 @@ h2, h3, h4, h5, h6{
 **/
 p{
 	margin: 0 0 1em 0;
-	.font( 20px, 30px, normal, 'font-name' );
+	.font( 16px, 20px, 100, 'proxima nova' );
 }
 
 
@@ -94,7 +111,7 @@ p{
 /**
  * Font styles
 **/
-.font-serif{ text-transform: uppercase; }
+.font-serif{ font-family: "kepler-std", serif; }
 
 
 

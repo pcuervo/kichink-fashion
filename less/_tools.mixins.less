@@ -105,22 +105,45 @@
 .center-full() {
 	position: absolute;
 	top: 50%; left: 50%;
-	.translate(-50%, -50%);
+	.translate( -50%, -50% );
 }
 
 .center-top() {
 	position: absolute;
 	top: 50%;
-	.translate(0, -50%);
+	.translate( 0, -50% );
+}
+
+.center-bottom() {
+	position: absolute;
+	bottom: 0%; left: 50%;
+	.translate( -50%, -50% );
+}
+
+.opacity( @amountOld, @amountModern ){
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="@amountOld")";
+
+	/* IE 5-7 */
+	filter: alpha(opacity=@amountOld);
+
+	/* Netscape */
+	-moz-opacity: @amountModern;
+
+	/* Safari 1.x */
+	-khtml-opacity: @amountModern;
+
+	/* Good browsers */
+	opacity: @amountModern;
 }
 
 .opacity-gradient() {
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255,255,255,0)), color-stop(0.01, rgba(0,0,0,0)), color-stop(0.26, rgba(0,0,0,0.07)), color-stop(0.71, rgba(0,0,0,0.5)), to(rgba(0,0,0,0.7)));
-	background: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
-	background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
-	background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
-	background: linear-gradient(rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0.7)), color-stop(0.01, rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
+	background: -moz-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
 }
 
 

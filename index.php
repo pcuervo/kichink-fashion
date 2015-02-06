@@ -39,44 +39,46 @@
 		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/smoothprodukts.css" />
 
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
 		<!-- -->
 		<!-- #Typekit code goes here -->
 		<!-- -->
+		<script src="//use.typekit.net/cco3wfo.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
-	<body>
+	<body class="[ body-home ]">
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div class="container">
+		<div class="[ container ]">
 			<header class="[ ]">
+				<div class="[ opacity-gradient--full ]"></div>
 				<div class="[ wrapper ] [ shown--small ]">
 					<div class="[ row ]">
 						<div class="[ columna xmall-6 ][ menu__item ]">
-							<a href="#">
-								<i class="icon-menu"></i>
+							<a class="[ menu ]" href="#">
+								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
-						<div class="[ columna xmall-6 ][ text-right ][ menu__item ]">
-							<a class="[ carrito_button ]" href="#"></a>
-						</div>
+						<div class="[ columna xmall-6 ][ text-right ][ menu__item ][ cart ]"></div>
 					</div>
 				</div>
 				<div class="[ wrapper ][ shown--medium ]">
 					<div class="[ row ]">
 						<div class="[ columna xmall-4 ][ text-left ][ menu__item ]">
 							<a href="/" class="">
-								<i class="icon-menu"></i>
+								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
 						<div class="[ columna xmall-4 ][ ][ text-right ][ menu__item ]">
 							<a href="#" class="">
-								<i class="icon-lang"></i>
+								<i class="[ icon-lang ]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="icon-login"></i>
+								<i class="[ icon-logi n]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="icon-help"></i>
+								<i class="[ icon-help ]"></i>
 							</a>
 							<a class="[ carrito_button ]" href="#"></a>
 						</div>
@@ -85,38 +87,25 @@
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]" style="background-image: url('<?php echo $store->cover ?>'); ">
+					<div class="[ opacity--full opacity--dark opacity--30 ]"></div>
 					<h1 class="[ center-full ]">
 						<a href="/">
-							<img class="[ img-circle ]" src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
+							<img class="[ img-circle ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
 						</a>
 					</h1>
-					<h2 class="[ center-full ]"><?php echo $store->name; ?></h2>
-					<h3 class="[ center-full ] [ font-serif ]"><?php echo $store->description; ?></h3>
-					<a href="#" class="">
-						<i class="icon-angle-down"></i>
+					<div class="[ store__info ] [ center-full ] [ xmall-12 text-center ]">
+						<h2 class=""><?php echo $store->name; ?></h2>
+						<h3 class="[ font-serif ]"><?php echo $store->description; ?></h3>
+					</div><!-- store__info -->
+					<a href="#" class="[ scroll-down ][ center-bottom ]">
+						<i class="[ icon-chevron-down ]"></i>
 					</a>
 				</section><!-- cover -->
 
 				<section class="[ row ]">
-					<ul class="[ product-grid ]">
-
-					</ul>
-					<article class="[ product ] [ columna xmall-12 medium-4 large-3 ]">
-						<!-- NOTICES -->
-						<div class="[ ribbon ]">
-							<p class="[ sold ] [ hide ]">Vendido</p>
-							<p class="[ new ] [ hide ]">Nuevo</p>
-						</div>
-						<img src="images/producto.jpg" alt="">
-						<div class="[ product__info ]">
-							<div class="[ product__info--name ]">
-								<h2 class="[ text-center ]">Nombre del producto</h2>
-							</div><!-- product__info--name -->
-							<div class="[ product__info--price ]">
-								<p class="[ text-center font-serif ]">$1,200</p>
-							</div><!-- product__info--price -->
-						</div>
-					</article><!-- product -->
+					<div class="[ wrapper ]">
+						<ul class="[ product-grid ]"></ul>
+					</div><!-- wrapper -->
 				</section><!-- product-grid -->
 			</div><!-- main -->
 		</div><!-- container -->
@@ -144,7 +133,7 @@
 		<script>
 		$(document).ready(function(){
 			// Carga carrito dinámicamente
-			$(".carrito_button").ShoppingKart({
+			$(".cart").ShoppingKart({
 				text: '<i class="icon-cart"></i>',
 				store_id: '<?= @$store->id ?>',
 				button: "#buy_button",

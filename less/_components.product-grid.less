@@ -1,0 +1,43 @@
+
+/*------------------------------------*\
+	#PRODUCT GRID
+\*------------------------------------*/
+
+.product-grid{
+	margin: @unidad 0 0 0; padding: 0;
+	list-style: none;
+}
+
+
+.item{
+	width: 100%;
+	margin: (@unidad) 0;
+	position: relative;
+}
+.item img{
+	display: block;
+}
+
+
+.ribbon{
+	background: @highlight;
+	position: absolute; top: @unidad; left: @unidad;
+}
+
+
+.items-data{
+	text-align: center;
+}
+
+.items-name, .items-price{
+	color: @light; text-decoration: none;
+}
+
+.items-name{
+	.font( 26px, 30px, 600, 'proxima nova' ); letter-spacing: 2px;
+	background: @dark;
+}
+.items-price{
+	.font( 26px, 30px, 400, 'kepler-std' );
+	background: @medium;
+}

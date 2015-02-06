@@ -6,6 +6,12 @@
 			#ON LOAD
 		\*------------------------------------*/
 
+		/**
+		* sidr
+		**/
+		$('.menu').sidr({
+			name: 'sidr'
+		});
 
 
 
@@ -27,6 +33,18 @@
 	#ON LOAD
 \*------------------------------------*/
 
+//Show lightbox and run cycle
+function openLightbox(){
+	$('.cycle-slideshow').cycle({
+		slides 		: ".image-single",
+		fx 			: "scrollHorz",
+		swipe 		: "true",
+		timeout 	: "0",
+		centerHorz : "true",
+		centerVert : "true"
+	});
+	$('.lightbox').show();
+}
 
 
 
