@@ -83,12 +83,19 @@
 				</div>
 				<div class="[ wrapper ][ shown--medium ]">
 					<div class="[ row ]">
-						<div class="[ columna xmall-6 ][ text-left ][ menu__item ]">
+						<div class="[ columna xmall-4 ][ text-left ][ menu__item ]">
 							<a href="/" class="[ menu ]">
 								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
-						<div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
+						<div class="[ columna xmall-4 ][ menu__item ]">
+							<h1 class="">
+								<a class="[ block center ]" href="/">
+									<img class="[ img-circle ][ block center ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
+								</a>
+							</h1>
+						</div>
+						<div class="[ columna xmall-4 ][ ][ text-right ][ menu__item ][ cart ]">
 							<a href="#" class="">
 								<i class="[ icon-lang ]"></i>
 							</a>
@@ -106,57 +113,68 @@
 				<section class="[ slider ]">
 					<div class="sp-wrap"></div>
 				</section><!-- cover -->
-				<section class="[ wrapper ]">
-					<article class="[ product__info ][ row ][ margin-bottom ]" id="item-detail">
-						<div class="[ product__info--name ] [ columna xmall-6 ]">
-							<h2 class="[ text-center ] [ title ]">?</h2>
-						</div><!-- product__info--name -->
-						<div class="[ product__info--price ] [ columna xmall-6 ]">
-							<h2 class="[ text-center font-serif ] [ precio ]"></h2>
-						</div><!-- product__info--price -->
-						<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
-							<p class="[  ]"></p>
-						</div><!-- product__info--price -->
-					</article>
-					<article class="[ product__options ] [ row ] [ margin-bottom ]">
-						<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
-						<div id="opc" class="btn-group" data-toggle="buttons"></div>
-						<div class="[ margin-bottom ]">
-							<h3 class="[ text-center font-serif ]">Tallas</h3>
+				<section class="[ product__info ]">
+					<div class="[ wrapper ]">
+						<article class="[ row ][ margin-bottom ]" id="item-detail">
+							<div class="[ product__info--name ] [ columna xmall-6 ]">
+								<h2 class="[ text-center ] [ title ]">?</h2>
+							</div><!-- product__info--name -->
+							<div class="[ product__info--price ] [ columna xmall-6 ]">
+								<h2 class="[ text-center font-serif ] [ precio ]"></h2>
+							</div><!-- product__info--price -->
+							<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
+								<p class="[  ]"></p>
+							</div><!-- product__info--price -->
+						</article>
+						<article class="[ product__options ] [ row ] [ margin-bottom ]">
+							<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
+							<div id="opc" class="btn-group" data-toggle="buttons"></div>
+							<div class="[ margin-bottom ]">
+								<h3 class="[ text-center font-serif ]">Tallas</h3>
+								<div class="[ text-center ]">
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
+								</div>
+							</div><!-- margin-bottom -->
+							<div class="[ margin-bottom ]">
+								<h3 class="[ text-center font-serif ]">Colores</h3>
+								<div class="[ text-center ]">
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">azul</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ selected ]">negro</a>
+									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">blanco</a>
+								</div>
+							</div><!-- margin-bottom -->
+						</article>
+						<article class="[ product__extra ] [ row ]">
+							<h2 class="[ text-center ]">Información adicional</h2>
+							<p class="[ text-center font-serif ]">Disponibilidad</p>
+							<p class="[ text-center ]">Disponible inmediatamente</p>
+							<p class="[ text-center font-serif ]">Formas de pago</p>
+							<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
+						</article>
+						<article class="[ product__buy ][ row ][ margin-bottom ]">
+							<h2 class="[ text-center font-serif ]">$1,200</h2>
 							<div class="[ text-center ]">
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
+								<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 							</div>
-						</div><!-- margin-bottom -->
-						<div class="[ margin-bottom ]">
-							<h3 class="[ text-center font-serif ]">Colores</h3>
+						</article>
+					</div><!-- wrapper -->
+					<footer class="[ shown--medium ]">
+						<div class="[ wrapper ]">
+							<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
 							<div class="[ text-center ]">
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">azul</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ selected ]">negro</a>
-								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">blanco</a>
+								<a class="[ inline-block ]" href="#">Términos y condiciones</a>
+								<a class="[ inline-block ]" href="#">Políticas de privacidad</a>
 							</div>
-						</div><!-- margin-bottom -->
-					</article>
-					<article class="[ product__extra ] [ row ]">
-						<h2 class="[ text-center ]">Información adicional</h2>
-						<p class="[ text-center font-serif ]">Disponibilidad</p>
-						<p class="[ text-center ]">Disponible inmediatamente</p>
-						<p class="[ text-center font-serif ]">Formas de pago</p>
-						<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
-					</article>
-					<article class="[ product__buy ][ row ][ margin-bottom ]">
-						<h2 class="[ text-center font-serif ]">$1,200</h2>
-						<div class="[ text-center ]">
-							<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 						</div>
-					</article>
-				</section><!-- product-grid -->
+					</footer>
+				</section><!-- product__info -->
 			</div><!-- main -->
 		</div><!-- container -->
-		<footer>
+		<footer class="[ shown--small ]">
 			<div class="[ wrapper ]">
 				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
 				<div class="[ text-center ]">
@@ -169,7 +187,6 @@
 
 	<!-- scripts de Kichink! -->
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//www.kichink.com/v2/themes/js/loginForm.js"></script>
 	<script type="text/javascript" src="//www.kichink.com/v2/themes/js/searchbox.js"></script>
 	<script type="text/javascript" src="//www.kichink.com/v2/themes/js/gridProdukts.js?v=<?= @$v ?>"></script>
@@ -177,6 +194,12 @@
 	<script type="text/javascript" src="//www.kichink.com/js/jquery.callapi.js"></script>
 	<script type="text/javascript" src="//www.kichink.com/assets_verticales/js/ajaxq.jquery.js"></script>
 	<script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
+
+
+	<!-- Scripts Fashion Theme -->
+	<script type="text/javascript" src="js/vendor/sidr.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<script>
 		$(document).ready(function() {
 			var store_id = 146;

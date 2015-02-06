@@ -15,7 +15,7 @@
 }
 .item img{
 	display: block;
-	//width: 200px; height: 150px;
+	width: 280px; height: 350px;
 }
 .item a{
 	display: block;
@@ -38,9 +38,11 @@
 }
 
 .items-name{
+	min-height: 100px;
 	padding: @unidad 0;
 	.font( 26px, 30px, 600, 'proxima nova' ); letter-spacing: 2px; color: @light;
 	background: @dark;
+	overflow: hidden;
 }
 .items-price{
 	padding: (@unidad/2) 0;
@@ -59,15 +61,16 @@
 	.items-price, .items-discount{
 		width: 50%;
 		padding: (@unidad/2) 0;
-		float: left;
+		.font( 18px, 22px, 400, 'kepler-std' );
 		background: @grey;
+		float: left;
 	}
 	.items-price{
-		.font( 18px, 22px, 400, 'kepler-std' ); color: lighten( @dark, 20%);
+		color: lighten( @dark, 20%);
 		text-decoration: line-through;
 	}
 	.items-discount{
-		.font( 22px, 26px, 400, 'kepler-std' ); color: @dark;
+		color: @dark;
 	}
 
 }

@@ -177,8 +177,8 @@
 				var store_id = 146;
 				$(".product-grid").GridProdukts({
 					 s3images: {
-		                width:0,
-		                height:0,
+		                width: 280,
+		                height: 350,
 		                rs_mode:"crop",
 		                img_type:"bordered"
 		           	},

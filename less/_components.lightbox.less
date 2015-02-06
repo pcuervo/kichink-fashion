@@ -1,6 +1,7 @@
 .slider{
 	background: @grey;
 	margin-bottom: @unidad;
+	position: relative;
 }
 
 .sp-wrap{
@@ -15,4 +16,20 @@
 .sp-full-screen{
 	background: @dark !important;
 	color: @light;
+}
+
+/*------------------------------------*\
+    #MEDIUM
+\*------------------------------------*/
+@media (min-width: @medium) {
+
+	.slider{
+		width: 66.66666664%; height: 100%;
+		margin-bottom: 0;
+		float: left;
+	}
+
+	.sp-wrap{
+		.center-full !important;
+	}
 }
