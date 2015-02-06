@@ -107,12 +107,12 @@
 					<div class="sp-wrap"></div>
 				</section><!-- cover -->
 				<section class="[ wrapper ]">
-					<article class="[ product__info ] [ row ]" id="item-detail">
+					<article class="[ product__info ][ row ][ margin-bottom ]" id="item-detail">
 						<div class="[ product__info--name ] [ columna xmall-6 ]">
-							<h2 class="[ text-center ] [ title ]">Hello?</h2>
+							<h2 class="[ text-center ] [ title ]">?</h2>
 						</div><!-- product__info--name -->
 						<div class="[ product__info--price ] [ columna xmall-6 ]">
-							<p class="[ text-center font-serif ] [ precio ]"></p>
+							<h2 class="[ text-center font-serif ] [ precio ]"></h2>
 						</div><!-- product__info--price -->
 						<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
 							<p class="[  ]"></p>
@@ -121,20 +121,24 @@
 					<article class="[ product__options ] [ row ] [ margin-bottom ]">
 						<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
 						<div id="opc" class="btn-group" data-toggle="buttons"></div>
-						<p class="[ text-center font-serif ]">Tallas</p>
-						<div class="[ text-center ]">
-							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
-							<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
-							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
-							<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
-							<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
-						</div>
-						<p class="[ text-center font-serif ]">Colores</p>
-						<div class="[ text-center ]">
-							<a href="#" class="[ inline-block ]">azul</a>
-							<a href="#" class="[ inline-block ] [ selected ]">negro</a>
-							<a href="#" class="[ inline-block ]">blanco</a>
-						</div>
+						<div class="[ margin-bottom ]">
+							<h3 class="[ text-center font-serif ]">Tallas</h3>
+							<div class="[ text-center ]">
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
+							</div>
+						</div><!-- margin-bottom -->
+						<div class="[ margin-bottom ]">
+							<h3 class="[ text-center font-serif ]">Colores</h3>
+							<div class="[ text-center ]">
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">azul</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ selected ]">negro</a>
+								<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">blanco</a>
+							</div>
+						</div><!-- margin-bottom -->
 					</article>
 					<article class="[ product__extra ] [ row ]">
 						<h2 class="[ text-center ]">Información adicional</h2>
@@ -143,10 +147,10 @@
 						<p class="[ text-center font-serif ]">Formas de pago</p>
 						<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
 					</article>
-					<article class="[ product__buy ] [ row ]">
+					<article class="[ product__buy ][ row ][ margin-bottom ]">
 						<h2 class="[ text-center font-serif ]">$1,200</h2>
 						<div class="[ text-center ]">
-							<a href="#" class="[ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
+							<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 						</div>
 					</article>
 				</section><!-- product-grid -->
@@ -154,7 +158,7 @@
 		</div><!-- container -->
 		<footer>
 			<div class="[ wrapper ]">
-				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="#" alt=""></p>
+				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
 				<div class="[ text-center ]">
 					<a class="[ inline-block ]" href="#">Términos y condiciones</a>
 					<a class="[ inline-block ]" href="#">Políticas de privacidad</a>

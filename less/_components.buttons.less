@@ -4,6 +4,7 @@
 .ribbon, .button{
 	padding: 8px 8px 6px 8px;
 	.font( 1em, 1, 400, 'proxima nova' ); text-align: center; text-transform: uppercase; text-decoration: none; color: @light;
+	.transition;
 }
 
 
@@ -48,13 +49,26 @@
 /*------------------------------------*\
 	#COLORES
 \*------------------------------------*/
-.button--hollow.button--dark{
-	border-color: @dark;
-	color: @dark;
-	background: none;
-}
 
 .button--dark{
 	background: @dark;
 	color: @light;
+}
+
+.button--hollow.button--dark{
+	border-color: @dark;
+	color: @dark;
+	background: none;
+
+	&:hover, &.selected {
+		background: @dark;
+		color: @light;
+	}
+
+	&.disabled{
+		pointer-events: none;
+		cursor: default;
+		border-color: lighten(@dark, 30%);
+		color: lighten(@dark, 30%);
+	}
 }
