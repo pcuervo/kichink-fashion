@@ -15,8 +15,10 @@
 }
 .item img{
 	display: block;
+	//width: 200px; height: 150px;
 }
 .item a{
+	display: block;
 	text-decoration: none;
 }
 
@@ -70,14 +72,34 @@
 
 }
 
+
+
+
+
 /*------------------------------------*\
-    #MEDIUM
+    #SMALL
 \*------------------------------------*/
-@media (min-width: @medium) {
+@media (min-width: @small) {
 
 	.product-grid{
 		.clearfix;
 	}
+
+	.item{
+		width: 50%;
+		padding-right: 5px; padding-left: 5px;
+		float: left;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #MEDIUM
+\*------------------------------------*/
+@media (min-width: @medium) {
 
 	.item{
 		width: 33.33333332%;

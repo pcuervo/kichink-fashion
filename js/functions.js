@@ -45,6 +45,18 @@ function cycleSlider(){
 }
 
 
+/**
+* Masonry layout for product grid
+**/
+function runMasonry(container, item){
+	var $container = $(container).masonry();
+	$container.imagesLoaded( function() {
+		$container.masonry({
+			itemSelector: item
+		});
+	});
+}
+
 
 
 /*------------------------------------*\

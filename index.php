@@ -53,21 +53,23 @@
 		<div class="[ container ]">
 			<div id="sidr" class="[ sidr ]">
 				<ul>
-					<li>
-						<a href="#" class="">
-							<i class="[ icon-lang ]"></i> Idioma/Moneda
-						</a>
-					</li>
-					<li>
-						<a href="#" class="">
-							<i class="[ icon-login ]"></i> Login
-						</a>
-					</li>
-					<li>
-						<a href="#" class="">
-							<i class="[ icon-help ]"></i> Ayuda
-						</a>
-					</li>
+					<div class="[ shown--small ]">
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-lang ]"></i> Idioma/Moneda
+							</a>
+						</li>
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-login ]"></i> Login
+							</a>
+						</li>
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-help ]"></i> Ayuda
+							</a>
+						</li>
+					</div><!-- shown--small -->
 					<li><a href="#">Hombres</a></li>
 					<li><a href="#">Mujéres</a></li>
 					<li><a href="#">Niños</a></li>
@@ -131,7 +133,7 @@
 				</section><!-- product-grid -->
 			</div><!-- main -->
 		</div><!-- container -->
-
+		<div class="[ clear ]"></div>
 		<footer>
 			<div class="[ wrapper ]">
 				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
@@ -151,8 +153,16 @@
 		<script type="text/javascript" src="//www.kichink.com/js/jquery.callapi.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/assets_verticales/js/ajaxq.jquery.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
+
+
+		<!-- Scripts Fashion Theme -->
+		<script type="text/javascript" src="js/vendor/sidr.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+
 		<script>
 			$(document).ready(function(){
+
 				// Carga carrito dinámicamente
 				$(".cart").ShoppingKart({
 					text: '<i class="icon-cart"></i>',
@@ -163,24 +173,30 @@
 					showOnPurchase: true,
 				});
 
-
 				// Carga productos dinámicamente
 				var store_id = 146;
 				$(".product-grid").GridProdukts({
 					store_id: store_id,
-					limit: 24,
+					limit: 12,
 					pagination: "scroll",
-					remoteURI:"https://www.kichink.com"
+					remoteURI:"https://www.kichink.com",
+					onSuccess: runMasonry('.product-grid', '.item')
 				});
 			});
 		</script>
 
-		<!-- Scripts Fashion Theme -->
-		<script type="text/javascript" src="js/vendor/sidr.js"></script>
-		<script type="text/javascript" src="js/plugins.js"></script>
-		<script type="text/javascript" src="js/functions.js"></script>
 
 
+
+
+		<!-- /********************************\ -->
+			<!-- #ON LOAD -->
+		<!-- \********************************/ -->
+		<script>
+			docReady( function() {
+
+			});
+		</script>
 
 
 		<!-- /********************************\ -->
