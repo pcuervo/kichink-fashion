@@ -50,7 +50,9 @@ function cycleSlider(){
 **/
 function runMasonry(container, item){
 	var $container = $(container).masonry();
+	console.log('before');
 	$container.imagesLoaded( function() {
+		console.log('after');
 		$container.masonry({
 			itemSelector: item
 		});
