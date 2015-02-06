@@ -22,7 +22,7 @@
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div class="[ container ]" id="[ item-container ]">
+		<div class="[ container ]" id="item-container">
 			<header class="[ header-front ]">
 				<div class="[ wrapper ] [ shown--small ]">
 					<div class="[ row ]">
@@ -77,26 +77,27 @@
 					<h2 class="[ text-center ]">ALEXIA ULIBARRI</h2>
 				</div><!-- .wrapper -->
 			</header>
-			<div class="[ main ] [ row ]">
+			<div class="[ main ] [ row ]" >
 				<section class="[ slider ]">
 					<img src="images/producto.jpg" alt="">
 					<img src="images/producto.jpg" alt="">
 					<img src="images/producto.jpg" alt="">
 				</section><!-- cover -->
 				<section>
-					<article class="[ product__info ] [ row ]">
+					<article class="[ product__info ] [ row ]" id="item-detail">
 						<div class="[ product__info--name ] [ columna xmall-6 ]">
 							<h2 class="[ text-center ] [ title ]">Hello?</h2>
 						</div><!-- product__info--name -->
 						<div class="[ product__info--price ] [ columna xmall-6 ]">
-							<p class="[ text-center font-serif ]">$1,200</p>
+							<p class="[ text-center font-serif ] [ precio ]"></p>
 						</div><!-- product__info--price -->
-						<div class="[ product__info--description ] [ columna xmall-12 ]">
-							<p class="[  ]">Quid, de quo nulla dissensio est? Quamvis enim depravatae non sint, pravae tamen esse possunt. Duo Reges: constructio interrete. Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint. Quid igitur dubitamus in tota eius natura quaerere quid sit effectum? Ut id aliis narrare gestiant?</p>
+						<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
+							<p class="[  ]"></p>
 						</div><!-- product__info--price -->
 					</article>
 					<article class="[ product__options ] [ row ]">
-						<h2 class="[ text-center ]">Opciones de compra</h2>
+						<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
+						<div id="opc" class="btn-group" data-toggle="buttons"></div>
 						<p class="[ text-center font-serif ]">Tallas</p>
 						<div class="[ text-center ]">
 							<a href="#" class="[ inline-block ] [ disabled ]">XS</a>
@@ -218,8 +219,9 @@
 
                 $(".myownbanner").hide();
 
-                $("#item-container").find(".title").remove();
-                var val = $("#item-container").find(".description p.des").html(data.description);
+                $("#item-container").find(".title").html(data.name);
+
+                var val = $("#item-container").find(".description p").html(data.description);
 
                 if (!data.description)
                     $("#item-container").find(".description").hide();
@@ -231,6 +233,7 @@
 
 				var p = aplicar_descuento.toString();
 				var precio = p.split(".");
+				console.log(precio)
 				$("#item-container").find("#item-detail .precio").html("$" + precio[0].toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + "<sup>" + precio[1] + "</sup>");
 
 				if (parseInt(data.discount) > 0) {
