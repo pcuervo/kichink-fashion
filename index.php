@@ -98,12 +98,11 @@
 								<i class="[ icon-lang ]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="[ icon-login]"></i>
+								<i class="[ icon-login ]"></i>
 							</a>
 							<a href="#" class="">
 								<i class="[ icon-help ]"></i>
 							</a>
-							<a class="[ carrito_button ]" href="#"></a>
 						</div>
 					</div>
 				</div><!-- .wrapper -->
