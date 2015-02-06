@@ -44,7 +44,7 @@
 						<div class="[ columna xmall-4 ]">
 							<h1>
 								<a href="/">
-									<img src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
+									<img class="[ img-circle ][ center ]" src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
 								</a>
 							</h1>
 						</div>
@@ -63,7 +63,7 @@
 						<div class="[ columna xmall-4 ]">
 							<h1>
 								<a href="/">
-									<img src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
+									<img class="[ img-circle ][ center ]" src="images/logo-tienda.png" alt="Tu tienda" title="Inicio" />
 								</a>
 							</h1>
 						</div>

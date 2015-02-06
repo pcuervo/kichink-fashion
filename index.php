@@ -88,17 +88,17 @@
 				</div>
 				<div class="[ wrapper ][ shown--medium ]">
 					<div class="[ row ]">
-						<div class="[ columna xmall-4 ][ text-left ][ menu__item ]">
-							<a href="/" class="">
+						<div class="[ columna xmall-6 ][ text-left ][ menu__item ]">
+							<a href="/" class="[ menu ]">
 								<i class="[ icon-menu ]"></i>
 							</a>
 						</div>
-						<div class="[ columna xmall-4 ][ ][ text-right ][ menu__item ]">
+						<div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
 							<a href="#" class="">
 								<i class="[ icon-lang ]"></i>
 							</a>
 							<a href="#" class="">
-								<i class="[ icon-logi n]"></i>
+								<i class="[ icon-login]"></i>
 							</a>
 							<a href="#" class="">
 								<i class="[ icon-help ]"></i>

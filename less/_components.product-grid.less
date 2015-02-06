@@ -52,15 +52,14 @@
  * IF DISCOUNT
 **/
 .discount{
-
 	.clearfix;
 
 	.items-price, .items-discount{
 		width: 50%;
 		padding: (@unidad/2) 0;
 		float: left;
+		background: @grey;
 	}
-
 	.items-price{
 		.font( 18px, 22px, 400, 'kepler-std' ); color: lighten( @dark, 20%);
 		text-decoration: line-through;
@@ -69,4 +68,20 @@
 		.font( 22px, 26px, 400, 'kepler-std' ); color: @dark;
 	}
 
+}
+
+/*------------------------------------*\
+    #MEDIUM
+\*------------------------------------*/
+@media (min-width: @medium) {
+
+	.product-grid{
+		.clearfix;
+	}
+
+	.item{
+		width: 33.33333332%;
+		padding-right: 5px; padding-left: 5px;
+		float: left;
+	}
 }
