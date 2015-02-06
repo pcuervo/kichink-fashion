@@ -176,6 +176,12 @@
 				// Carga productos dinámicamente
 				var store_id = 146;
 				$(".product-grid").GridProdukts({
+					 s3images: {
+		                width:0,
+		                height:0,
+		                rs_mode:"crop",
+		                img_type:"bordered"
+		           	},
 					store_id: store_id,
 					limit: 12,
 					pagination: "scroll",
