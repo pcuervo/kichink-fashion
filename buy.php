@@ -79,9 +79,10 @@
 			</header>
 			<div class="[ main ] [ row ]" >
 				<section class="[ slider ]">
+					<div class="sp-wrap"></div>
+<!-- 					<img src="images/producto.jpg" alt="">
 					<img src="images/producto.jpg" alt="">
-					<img src="images/producto.jpg" alt="">
-					<img src="images/producto.jpg" alt="">
+					<img src="images/producto.jpg" alt=""> -->
 				</section><!-- cover -->
 				<section>
 					<article class="[ product__info ] [ row ]" id="item-detail">
