@@ -51,6 +51,29 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="[ container ]">
+			<div id="sidr" class="[ sidr ]">
+				<ul>
+					<li>
+						<a href="#" class="">
+							<i class="[ icon-lang ]"></i> Idioma/Moneda
+						</a>
+					</li>
+					<li>
+						<a href="#" class="">
+							<i class="[ icon-login ]"></i> Login
+						</a>
+					</li>
+					<li>
+						<a href="#" class="">
+							<i class="[ icon-help ]"></i> Ayuda
+						</a>
+					</li>
+					<li><a href="#">Hombres</a></li>
+					<li><a href="#">Mujéres</a></li>
+					<li><a href="#">Niños</a></li>
+					<li><a href="#">Joyería</a></li>
+				</ul>
+			</div><!-- sidr -->
 			<header class="[ ]">
 				<div class="[ opacity-gradient--full ]"></div>
 				<div class="[ wrapper ] [ shown--small ]">
@@ -102,7 +125,7 @@
 					</a>
 				</section><!-- cover -->
 
-				<section class="[ row ]">
+				<section class="[  ]">
 					<div class="[ wrapper ]">
 						<ul class="[ product-grid ]"></ul>
 					</div><!-- wrapper -->
@@ -112,7 +135,7 @@
 
 		<footer>
 			<div class="[ wrapper ]">
-				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="#" alt=""></p>
+				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
 				<div class="[ text-center ]">
 					<a class="[ inline-block ]" href="#">Términos y condiciones</a>
 					<a class="[ inline-block ]" href="#">Políticas de privacidad</a>
@@ -120,9 +143,8 @@
 			</div>
 		</footer>
 
-		<!-- scripts de Kichink! -->
+		<!-- Scripts de Kichink! -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/loginForm.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/searchbox.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/gridProdukts.js?v=<?= @$v ?>"></script>
@@ -131,25 +153,46 @@
 		<script type="text/javascript" src="//www.kichink.com/assets_verticales/js/ajaxq.jquery.js"></script>
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
 		<script>
-		$(document).ready(function(){
-			// Carga carrito dinámicamente
-			$(".cart").ShoppingKart({
-				text: '<i class="icon-cart"></i>',
-				store_id: '<?= @$store->id ?>',
-				button: "#buy_button",
-				placement: "right",
-				checkoutURI: "https://www.kichink.com/checkout",
-				showOnPurchase: true,
+			$(document).ready(function(){
+				// Carga carrito dinámicamente
+				$(".cart").ShoppingKart({
+					text: '<i class="icon-cart"></i>',
+					store_id: '<?= @$store->id ?>',
+					button: "#buy_button",
+					placement: "right",
+					checkoutURI: "https://www.kichink.com/checkout",
+					showOnPurchase: true,
+				});
+
+
+				// Carga productos dinámicamente
+				var store_id = 146;
+				$(".product-grid").GridProdukts({
+					store_id: store_id,
+					limit: 24,
+					pagination: "scroll",
+					remoteURI:"https://www.kichink.com"
 				});
 			});
+		</script>
 
-			// Carga productos dinámicamente
-			var store_id = 146;
-			$(".product-grid").GridProdukts({
-				store_id: store_id,
-				limit: 24,
-				pagination: "scroll",
-				remoteURI:"https://www.kichink.com"
+		<!-- Scripts Fashion Theme -->
+		<script type="text/javascript" src="js/vendor/sidr.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+
+
+
+
+		<!-- /********************************\ -->
+			<!-- #Triggered events -->
+		<!-- \********************************/ -->
+		<script>
+			$(document).ready(function(){
+				$('.scroll-down').on('click', function(e){
+					e.preventDefault();
+					scrollDown();
+				});
 			});
 		</script>
 	</body>

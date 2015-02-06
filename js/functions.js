@@ -34,16 +34,14 @@
 \*------------------------------------*/
 
 //Show lightbox and run cycle
-function openLightbox(){
+function cycleSlider(){
 	$('.cycle-slideshow').cycle({
-		slides 		: ".image-single",
 		fx 			: "scrollHorz",
 		swipe 		: "true",
 		timeout 	: "0",
-		centerHorz : "true",
-		centerVert : "true"
+		centerHorz 	: "true",
+		centerVert 	: "true"
 	});
-	$('.lightbox').show();
 }
 
 
@@ -53,6 +51,12 @@ function openLightbox(){
 	#Triggered events
 \*------------------------------------*/
 
+//Scrol past the cover
+function scrollDown(){
+	var position = $('.product-grid').offset().top;
+	position = position - 20;
+	$('html, body').animate({scrollTop: position}, 650);
+}
 
 
 
