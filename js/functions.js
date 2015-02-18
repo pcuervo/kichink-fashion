@@ -15,6 +15,7 @@
 
 
 
+
 		/*------------------------------------*\
 			#Triggered events
 		\*------------------------------------*/
@@ -65,12 +66,6 @@ function itemsExist(){
 
 }
 
-function allright(){
-	var $container = 'lalala';
-	var position = $('.product-grid').offset().top;
-	position = position - 20;
-	console.log('bottom');
-}
 
 /**
 * Masonry layout for product grid
@@ -92,15 +87,58 @@ function runMasonry(container, item){
 	#Triggered events
 \*------------------------------------*/
 
-//Scrol past the cover
+/**
+* Scroll past the cover
+**/
 function scrollDown(){
 	var position = $('.product-grid').offset().top;
 	position = position - 20;
 	$('html, body').animate({scrollTop: position}, 650);
 }
 
+/**
+* Change language
+**/
+function changeLang(lang) {
+	var ajax = $.post("https://www.kichink.com/home/change_lang", {lang: lang}, function(data) {})
+	.success(function() {
+		location.reload();
+	})
+	.error(function() {
+		alert("Hubo un error al hacer el cambio. Por favor recarga la pagina e intente de nuevo");
+	});
+}
 
+function fillSlideshow(images){
+	if(images.length <= 1) $('.cycle-controls').hide();
 
+	$.each(images, function(i, val){
+		image_html = '<img src="'+val.bordered+'" alt="">';
+		$('.slideshow').append(image_html);
+	});
+}// fillSlideshow
+
+function mostrarDisponibilidad(disponiblilidad_obj){
+	var disp;
+	switch (disponiblilidad_obj.type) {
+		case "ava_inme":
+		{
+			disp = "Disponible inmediatamente";
+			break;
+		}
+		case "ava_date":
+		{
+			disp = "Disponible a partir de " + disponiblilidad_obj.value + " d&iacute;as";
+			break;
+		}
+		default:
+		{
+			disp = "Disponible en " + disponiblilidad_obj.value + " d&iacute;as";
+			break;
+		}
+	}
+	$('.js-disponibilidad').text(disp);
+}
 
 /*------------------------------------*\
 	#RESPONSIVE

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
@@ -8,8 +7,8 @@
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
 	$store->cover 			= "images/cover-tienda.jpg";
-	//$hasSession = empty($this->session->userdata['username']) ? false : true;
 	$lang = 'es';
+	$hasSession = true;
 
 	//info de los meta:og
 	$og_title = $store->name." - Kichink!";
@@ -17,16 +16,19 @@
 	$og_url = "http://htmls.kichink.com/";
 	$og_images = array("images/logo-tienda.jpg");
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="cleartype" content="on">
 		<title><?php echo $store->name; ?> - Kichink!</title>
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="<?php echo $og_description; ?>">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="cleartype" content="on">
+
 
 		<!-- Metas para compartir -->
 		<meta property="og:title" content="<?php echo $og_title; ?>" />
@@ -54,47 +56,48 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div id="sidr" class="[ sidr ]">
-				<div id="menu">
-					<ul>
-						<div class="[ shown--small ]">
-							<li>
-								<a href="#" class="">
-									<i class="[ icon-lang ]"></i> Idioma/Moneda
-								</a>
-							</li>
-							<li>
-								<a href="#" class="">
-									<i class="[ icon-login ]"></i> Login
-								</a>
-							</li>
-							<li>
-								<a href="#" class="">
-									<i class="[ icon-help ]"></i> Ayuda
-								</a>
-							</li>
-						</div><!-- shown--small -->
-						<li><a href="http://fofwebdesign.co.uk/">Mujeres</a> <label for="fof" class="toggle-sub" onclick="">&#9658;</label>
-							<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/>
-							<ul id="fof-sub" class="sub-nav">
-								<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label>
-								<li class="sub-heading">Mujeres </li>
-								<li><a href="#">Faldas</a></li>
-								<li><a href="#">Tacones</a></li>
-							</ul>
+			<div id="menu">
+				<ul>
+					<div class="[ shown--small ]">
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-lang ]"></i> Idioma/Moneda
+							</a>
 						</li>
-						<li><a href="http://fast-edit.co.uk/">Hombres</a></li>
-						<li><a href="http://fast-apps.co.uk/">Niños</a> <label for="fast-apps" class="toggle-sub" onclick="">&#9658;</label>
-							<input type="checkbox" name="nav" id="fast-apps" class="sub-nav-check"/>
-							<ul id="fast-apps-sub" class="sub-nav">
-								<li class="sub-heading">Niños <label for="fast-apps" class="toggle" onclick="" title="Back">&#9668;</label></li>
-								<li><a href="#">Juguetes</a></li>
-								<li><a href="#">Carreolas</a></li>
-							</ul>
+						<li>
+							<a href="#" class="">
+								<i class="[ icon-login ]"></i> Login
+							</a>
 						</li>
-						<li><a href="http://www.dynamicdrive.com/">Accesorios</a></li>
-					</ul>
-				</div><!-- closing "#menu" -->
-			</div><!-- sidr -->
+						<li>
+							<a href="mailto:soporte@kichink.com" class="">
+								<i class="[ icon-help ]"></i> Ayuda
+							</a>
+						</li>
+					</div><!-- shown--small -->
+					<li><a href="http://fofwebdesign.co.uk/">Mujeres</a> <label for="fof" class="toggle-sub" onclick="">&#9658;</label>
+						<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/>
+						<ul id="fof-sub" class="sub-nav">
+							<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label>
+							<li class="sub-heading">Mujeres </li>
+							<li><a href="#">Faldas</a></li>
+							<li><a href="#">Tacones</a></li>
+						</ul>
+					</li>
+					<li><a href="http://fast-edit.co.uk/">Hombres</a></li>
+					<li><a href="http://fast-apps.co.uk/">Niños</a> <label for="fast-apps" class="toggle-sub" onclick="">&#9658;</label>
+						<input type="checkbox" name="nav" id="fast-apps" class="sub-nav-check"/>
+						<ul id="fast-apps-sub" class="sub-nav">
+							<label for="fast-apps" class="[ toggle back ]" onclick="" title="Back">Atras</label>
+							<li class="sub-heading">Niños</li>
+							<li><a href="#">Juguetes</a></li>
+							<li><a href="#">Carreolas</a></li>
+						</ul>
+					</li>
+					<li><a href="http://www.dynamicdrive.com/">Accesorios</a></li>
+				</ul>
+			</div><!-- closing "#menu" -->
+		</div><!-- sidr -->
 		<div class="[ container ]">
 			<header class="[ ]">
 				<div class="[ opacity-gradient--full ]"></div>
@@ -116,13 +119,13 @@
 							</a>
 						</div>
 						<div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
-							<a href="#" class="">
+							<a href="#" class="[ js-lang ]">
 								<i class="[ icon-lang ]"></i>
 							</a>
-							<a href="#" class="">
+							<a href="#" class="[ js-login ]">
 								<i class="[ icon-login ]"></i>
 							</a>
-							<a href="#" class="">
+							<a href="mailto:soporte@kichink.com" class="">
 								<i class="[ icon-help ]"></i>
 							</a>
 						</div>
@@ -156,7 +159,7 @@
 		<div class="[ clear ]"></div>
 		<footer>
 			<div class="[ wrapper ]">
-				<h2 class="[ text-center ]">Compárte esta tienda</h2>
+				<h2 class="[ text-center ]">Comparte esta tienda</h2>
 				<ul class="[ rrssb-buttons ] [ margin-bottom--small ]">
 					<li class="rrssb-facebook">
 						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url; ?>" class="popup">
@@ -226,7 +229,7 @@
 					</li>
 
 				</ul>
-				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por <img src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
+				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por<img class="[ align-middle ]" src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
 				<div class="[ text-center ]">
 					<a class="[ inline-block ]" href="#">Términos y condiciones</a>
 					<a class="[ inline-block ]" href="#">Políticas de privacidad</a>
@@ -246,9 +249,6 @@
 
 
 		<!-- Scripts Fashion Theme -->
-		<script type="text/javascript" src="js/vendor/sidr.js"></script>
-		<script type="text/javascript" src="js/vendor/drilldown.min.js"></script>
-		<script type="text/javascript" src="js/vendor/rrssb.min.js"></script>
 		<script type="text/javascript" src="js/plugins.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 
@@ -274,6 +274,14 @@
 					remoteURI:"https://www.kichink.com",
 					onSuccess: itemsExist
 				});
+
+				// $(".js-login").LoginForm({
+				// 	lang: 'en',
+				// 	username: 'Roberto Romero',
+				// 	hasSession: true,
+				// 	type: 		'button'
+				// });
+
 			});
 		</script>
 
@@ -298,10 +306,16 @@
 		<!-- \********************************/ -->
 		<script>
 			$(document).ready(function(){
+
 				$('.scroll-down').on('click', function(e){
 					e.preventDefault();
 					scrollDown();
 				});
+
+				$('.js-lang').on('click', function(){
+					changeLang('en');
+				});
+
 			});
 		</script>
 	</body>
