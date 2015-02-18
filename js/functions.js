@@ -116,7 +116,22 @@ function fillSlideshow(images){
 		image_html = '<img src="'+val.bordered+'" alt="">';
 		$('.slideshow').append(image_html);
 	});
+
+	runCycle();
 }// fillSlideshow
+
+function runCycle(){
+	$('.js-cycle-slideshow').cycle({
+		fx: 			'scrollHorz',
+		centerHorz: 	true,
+		centerVert: 	true,
+		swipe: 			true,
+		timeout: 		0,
+		prev: 			'.cycle-prev',
+		next: 			'.cycle-next',
+		log: 			false
+	});
+}// runCycle
 
 function mostrarDisponibilidad(disponiblilidad_obj){
 	var disp;
@@ -139,6 +154,38 @@ function mostrarDisponibilidad(disponiblilidad_obj){
 	}
 	$('.js-disponibilidad').text(disp);
 }
+
+function fillStoreDetails(name, description, logo, cover){
+	$('.store-name').text(name);
+	$('.store-description').text(description);
+	$('.cover').css('background-image', 'url('+cover+')');
+	$('.logo').attr('src', logo);
+}// fillStoreDetails
+
+function fillMenuCategories(categories){
+	$.each(categories, function(i, category){
+		//console.log(category);
+		var menu_item_html = '<li><a href="#">'+category.name+'</a>';
+			
+		if(category.subcats.length == 0){
+			menu_item_html += '</li>';
+			$('#menu ul').append(menu_item_html);
+			return true;
+		}
+
+		// Agregar subcategorías
+		menu_item_html += ' \
+				<label for="fof" class="toggle-sub" onclick="">&#9658;</label> \
+				<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/> \
+				<ul id="fof-sub" class="sub-nav"> \
+					<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label> \
+					<li class="sub-heading">'+category.name+'</li>';
+		$.each(category.subcats, function(j, subcat){ menu_item_html += '<li><a href="#">'+subcat.name+'</a></li>'; });
+		menu_item_html += '</ul></li>';
+		$('#menu ul').append(menu_item_html);
+	});
+}// fillMenuCategories
+
 
 /*------------------------------------*\
 	#RESPONSIVE
