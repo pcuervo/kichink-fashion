@@ -110,6 +110,25 @@ function changeLang(lang) {
 }
 
 
+/**
+* Show/hide related products in the single page
+**/
+function toggleRelatedProducts(){
+	console.log('toggleRelatedProducts');
+	if ( $('.product-grid-wrapper').hasClass('hide') ){
+		runMasonry('.product-grid', '.item');
+		$('.product-grid-wrapper').fadeIn('fast');
+		$('.product-grid-wrapper').removeClass('hide').addClass('open');
+		return;
+	}
+
+	if ( $('.product-grid-wrapper').hasClass('open') ){
+		$('.product-grid-wrapper').fadeOut('fast');
+		$('.product-grid-wrapper').removeClass('open').addClass('hide');
+		return;
+	}
+}
+
 
 /*------------------------------------*\
 	#RESPONSIVE

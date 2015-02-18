@@ -2,11 +2,11 @@
 	#SINGLE
 \*------------------------------------*/
 
-
-/**
- * IF DISCOUNT
-**/
 .body-single{
+
+	/**
+	 * IF DISCOUNT
+	**/
 	.discount{
 		margin-top: @unidad;
 		p{ margin: 0; }
@@ -15,35 +15,89 @@
 			color: lighten( @dark, 20%); background: none;
 			text-align: center; text-decoration: line-through;
 		}
-
 	}
-}
 
-
-
-/*------------------------------------*\
-    #MEDIUM
-\*------------------------------------*/
-@media (min-width: @medium) {
-
-	.product__info{
-		width: 33.33333332%; height: calc( ~'100% - 130px' );
-		padding: @unidad 0;
-		background: @grey;
+	.item{
+		width: 50%;
+		padding-right: 5px; padding-left: 5px;
 		float: left;
-		overflow-y: scroll;
 	}
 
-	.product__buy{
-		width: 33.33333332%; height: 130px;
-		padding-top: 20px; margin: 0;
-		background: @dark;
-		color: @light;
-		position: absolute; bottom: 0; right: 0;
+
+
+
+	/*------------------------------------*\
+		#SMALL
+	\*------------------------------------*/
+	@media (min-width: @small) {
+
+		.item{
+			width: 24.99999999%;
+		}
+
 	}
 
-	#buy_buton{
-		width: 100%; height: 50px;
+
+
+
+
+	/*------------------------------------*\
+		#MEDIUM
+	\*------------------------------------*/
+	@media (min-width: @medium) {
+
+		.product__info{
+			width: 33.33333332%; height: calc( ~'100% - 130px' );
+			padding: @unidad 0;
+			background: @grey;
+			float: left;
+			overflow-y: scroll;
+			position: relative;
+		}
+
+		.product__buy{
+			width: 33.33333332%; height: 130px;
+			padding-top: 20px; margin: 0;
+			background: @dark;
+			color: @light;
+			position: fixed; bottom: 0; right: 0;
+		}
+
+		#buy_buton{
+			width: 100%; height: 50px;
+		}
+
+		.product-grid-wrapper{
+			display: none;
+			width: 100%; height: 100%;
+			background: @grey;
+			position: absolute; top: 0; left: 0;
+		}
+
+		.product-grid{
+			height: 100%;
+			margin: 0;
+			background: @grey;
+			position: absolute; top: 0; left: 0;
+		}
+
+		.item{
+			width: 50%;
+		}
+
 	}
 
+
+
+
+	/*------------------------------------*\
+	    #LARGE
+	\*------------------------------------*/
+	@media (min-width: @large) {
+
+		.item{
+			//width: 24.99999999%;
+		}
+
+	}
 }

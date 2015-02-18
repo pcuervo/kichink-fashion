@@ -23,6 +23,8 @@
 
 .hidden--medium{ display: none !important; }
 .shown--medium{ display: none !important; }
+.shown--medium--inline-block{ display: none !important; }
+.shown--large{ display: none !important; }
 
 /**
  * Small
@@ -36,16 +38,25 @@
  * Medium
 **/
 @media (min-width: @medium) {
+
 	.shown--small{ display: none !important; }
 
 	.shown--medium{ display: block !important; }
+	.shown--medium--inline-block{ display: inline-block !important; }
+
 	.hidden--medium{ display: none !important; }
+
 }
 
 /**
  * Large
 **/
 @media (min-width: @large) {
+
+	.shown--medium{ display: none !important; }
+
+	.shown--large{ display: block !important; }
+	.hidden--large{ display: none !important; }
 
 }
 
