@@ -14,3 +14,13 @@
 	box-sizing: border-box;
 }
 
+/**
+ * Links
+**/
+a{
+	color: @highlight;
+	.transition;
+	&:hover{
+		color: darken(@highlight, 10%);
+	}
+}

@@ -53,6 +53,12 @@
 .button--dark{
 	background: @dark;
 	color: @light;
+
+	&:hover, &.selected {
+		background: darken( @dark, 5%);
+		color: @light;
+	}
+
 }
 
 .button--hollow.button--dark{
@@ -68,7 +74,7 @@
 	&.disabled{
 		pointer-events: none;
 		cursor: default;
-		border-color: lighten(@dark, 30%);
-		color: lighten(@dark, 30%);
+		border-color: lighten(@dark, 50%);
+		color: lighten(@dark, 50%);
 	}
 }

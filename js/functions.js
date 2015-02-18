@@ -15,6 +15,7 @@
 
 
 
+
 		/*------------------------------------*\
 			#Triggered events
 		\*------------------------------------*/
@@ -65,12 +66,6 @@ function itemsExist(){
 
 }
 
-function allright(){
-	var $container = 'lalala';
-	var position = $('.product-grid').offset().top;
-	position = position - 20;
-	console.log('bottom');
-}
 
 /**
 * Masonry layout for product grid
@@ -92,13 +87,27 @@ function runMasonry(container, item){
 	#Triggered events
 \*------------------------------------*/
 
-//Scrol past the cover
+/**
+* Scroll past the cover
+**/
 function scrollDown(){
 	var position = $('.product-grid').offset().top;
 	position = position - 20;
 	$('html, body').animate({scrollTop: position}, 650);
 }
 
+/**
+* Change language
+**/
+function changeLang(lang) {
+	var ajax = $.post("https://www.kichink.com/home/change_lang", {lang: lang}, function(data) {})
+	.success(function() {
+		location.reload();
+	})
+	.error(function() {
+		alert("Hubo un error al hacer el cambio. Por favor recarga la pagina e intente de nuevo");
+	});
+}
 
 
 

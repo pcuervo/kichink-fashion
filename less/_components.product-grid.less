@@ -38,7 +38,7 @@
 }
 
 .items-name{
-	padding: @unidad 0;
+	padding: @unidad;
 	.font( 26px, 30px, 600, 'proxima nova' ); letter-spacing: 2px; color: @light;
 	background: @dark;
 	overflow: hidden;
@@ -104,8 +104,20 @@
 @media (min-width: @medium) {
 
 	.item{
-		width: 33.33333332%;
-		padding-right: 5px; padding-left: 5px;
-		float: left;
+		width: 33.333%;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #LARGE
+\*------------------------------------*/
+@media (min-width: @large) {
+
+	.item{
+		width: 24.99999999%;
 	}
 }
