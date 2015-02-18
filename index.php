@@ -2,11 +2,12 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 146;
+	$store->id 				= 15272;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
 	$store->cover 			= "images/cover-tienda.jpg";
+	$lang = 'es';
 	$hasSession = true;
 
 	//info de los meta:og
@@ -132,16 +133,16 @@
 				</div><!-- .wrapper -->
 			</header>
 			<div class="[ main ]">
-				<section class="[ cover ]" style="background-image: url('<?php echo $store->cover ?>'); ">
+				<section class="[ cover ]">
 					<div class="[ opacity--full opacity--dark opacity--30 ]"></div>
 					<h1 class="[ center-full ]">
 						<a href="/">
-							<img class="[ img-circle ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
+							<img class="[ img-circle ] [ logo ]" src="#" alt="" title="Inicio" />
 						</a>
 					</h1>
 					<div class="[ store__info ] [ center-full ] [ xmall-12 text-center ]">
-						<h2 class=""><?php echo $store->name; ?></h2>
-						<h3 class="[ font-serif ]"><?php echo $store->description; ?></h3>
+						<h2 class="[ store-name ]"></h2>
+						<h3 class="[ font-serif ] [ store-description ]"></h3>
 					</div><!-- store__info -->
 					<a href="#" class="[ scroll-down ][ center-bottom ]">
 						<i class="[ icon-chevron-down ]"></i>
@@ -265,9 +266,8 @@
 				});
 
 				// Carga productos dinámicamente
-				var store_id = 146;
 				$(".product-grid").GridProdukts({
-					store_id: store_id,
+					store_id: '<?= @$store->id ?>',
 					limit: 12,
 					pagination: "scroll",
 					remoteURI:"https://www.kichink.com",
@@ -280,6 +280,19 @@
 				// 	hasSession: true,
 				// 	type: 		'button'
 				// });
+
+				$.ajax({
+					type: "POST",
+					data: {
+						store_id: '<?= @$store->id ?>'
+					},
+					url: "https://www.kichink.com/api/stores/get_store_details",
+					success: function(data) {
+						var ajax_request = jQuery.parseJSON(data.toString());
+						fillStoreDetails(ajax_request.data.name, ajax_request.data.description, ajax_request.data.logo, ajax_request.data.header);
+						fillMenuCategories(ajax_request.data.categories);
+					}
+				});
 
 			});
 		</script>

@@ -1,6 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
-	$store->id 				= 146;
+	$store 					= new stdClass();
+	$store->id 				= 15272;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -137,12 +138,8 @@
 			</header>
 			<div class="[ main ]">
 				<section class="[ slider ]">
-					<!-- <div class="[ sp-wrap ]"></div> -->
 					<div class="[ slideshow ] [ js-cycle-slideshow ]">
-						<img src="https://s3.amazonaws.com/kichink/items_474097_21839_20141223110245_b.jpg" alt="">
-						<img src="https://s3.amazonaws.com/kichink/items_3776_206_20130301153040_b.jpg" alt="">
-						<img src="https://s3.amazonaws.com/kichink/items_6758_206_20130301110235_b.jpg" alt="">
-						<img src="https://s3.amazonaws.com/kichink/items_27139_206_20130717114221_b.jpg" alt="">
+
 					</div>
 					<div class="cycle-controls">
 						<span class="cycle-prev"><i class="icon-chevron-prev"></i></span>
@@ -259,7 +256,7 @@
 						<article class="[ product__extra ] [ row ][ margin-bottom ]">
 							<h2 class="[ text-center ]">Información adicional</h2>
 							<!-- <p class="[ text-center font-serif ]">Disponibilidad</p> -->
-							<p class="[ text-center ]">Disponible inmediatamente</p>
+							<p class="[ text-center ] [ js-disponibilidad ]"></p>
 							<!-- <p class="[ text-center font-serif ]">Formas de pago</p> -->
 							<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
 						</article>
@@ -316,7 +313,7 @@
 	<!-- \********************************/ -->
 	<script>
 		$(document).ready(function() {
-			var store_id = 146;
+			var store_id = <?php echo $store->id ?>;
 			var item_id = <?php echo $item_id; ?>;
 			$.ajax({
 				type: "POST",
@@ -330,8 +327,10 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
-					//console.log(ajax_request.data);
+					fillSlideshow(ajax_request.data[0].images);
 					load_item(ajax_request.data[0], false);
+					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
+					console.log(ajax_request.data[0]);
 				}
 			});
 
