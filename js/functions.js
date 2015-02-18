@@ -46,16 +46,43 @@ function cycleSlider(){
 
 
 /**
+* Check if .item elemets have been loaded and execute mansory
+**/
+function itemsExist(){
+
+	var interval 	= 0,
+		itemsLenght = 0;
+
+	interval = setInterval(function(){
+		var itemsLenght = $('.product-grid .item').length;
+
+		if ( itemsLenght > 0 ){
+			runMasonry('.product-grid', '.item');
+			clearInterval(interval);
+		}
+
+	}, 200);
+
+}
+
+function allright(){
+	var $container = 'lalala';
+	var position = $('.product-grid').offset().top;
+	position = position - 20;
+	console.log('bottom');
+}
+
+/**
 * Masonry layout for product grid
 **/
 function runMasonry(container, item){
 	var $container = $(container).masonry();
-	console.log('before');
 	$container.imagesLoaded( function() {
-		console.log('after');
 		$container.masonry({
 			itemSelector: item
 		});
+		$container.masonry( 'reloadItems' );
+		$container.masonry( 'layout' );
 	});
 }
 

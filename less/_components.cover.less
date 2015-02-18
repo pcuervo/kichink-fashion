@@ -10,7 +10,7 @@
 }
 
 .store__info{
-	top: 70%;
+	top: 80%;
 	color: @light;
 }
 
@@ -22,7 +22,52 @@
 .scroll-down{
 	font-size: 20px;
 	color: @light;
+	.transition;
+
+	&:hover{
+		bottom: 4px;
+	}
 }
+
+
+
+
+
+/*------------------------------------*\
+    #SMALL
+\*------------------------------------*/
+@media (min-width: @small) {
+
+	.store__info{
+		top: 70%;
+	}
+
+}
+
+
+
+
+/*------------------------------------*\
+    #SMALL & LANDSCAPE
+\*------------------------------------*/
+@media (min-width: @xmall) and (orientation: landscape) {
+
+	h1{
+		top: 45% !important;
+	}
+
+	.store__info{
+		top: 82%;
+	}
+
+	.store__info h2{
+		margin-bottom: 0;
+	}
+
+}
+
+
+
 
 /*------------------------------------*\
     #MEDIUM
