@@ -226,6 +226,7 @@
 							<div class="[ product__info--price ] [ columna xmall-6 ]">
 								<h2 class="[ text-center font-serif ] [ precio ]"></h2>
 							</div><!-- product__info--price -->
+							<div class="[ clear ]"></div>
 							<h2 class="[ text-center ]">Descripción</h2>
 							<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
 								<p class="[  ]"></p>
@@ -330,7 +331,7 @@
 					fillSlideshow(ajax_request.data[0].images);
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
-					console.log(ajax_request.data[0]);
+					//console.log(ajax_request.data[0]);
 				}
 			});
 
@@ -559,7 +560,7 @@
 			});
 
 			$('.js-related-products').on('click', function(){
-				toggleRelatedProducts();
+				toggleRelatedProducts( this );
 			});
 
 
