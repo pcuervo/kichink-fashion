@@ -9,6 +9,7 @@
 	$store->logo 			= "images/logo-tienda.jpg";
 	$store->cover 			= "images/cover-tienda.jpg";
 	//$hasSession = empty($this->session->userdata['username']) ? false : true;
+	$lang = 'es';
 
 	//info de los meta:og
 	$og_title = $store->name." - Kichink!";
