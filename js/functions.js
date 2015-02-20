@@ -34,17 +34,6 @@
 	#ON LOAD
 \*------------------------------------*/
 
-//Show lightbox and run cycle
-function cycleSlider(){
-	$('.cycle-slideshow').cycle({
-		fx 			: "scrollHorz",
-		swipe 		: "true",
-		timeout 	: "0",
-		centerHorz 	: "true",
-		centerVert 	: "true"
-	});
-}
-
 
 /**
 * Check if .item elemets have been loaded and execute mansory
@@ -110,14 +99,21 @@ function changeLang(lang) {
 }
 
 function fillSlideshow(images){
-	if(images.length <= 1) $('.cycle-controls').hide();
 
-	$.each(images, function(i, val){
-		var image_html = '<img src="'+val.bordered+'" alt="">';
-		$('.slideshow').append(image_html);
-	});
+	if( images.length <= 1){
+		$('.cycle-controls').hide();
+			$.each(images, function(i, val){
+			image_html = '<img class="[ single-image ]" src="'+val.bordered+'" alt="">';
+			$('.slideshow').append(image_html);
+		});
+	} else {
+		$.each(images, function(i, val){
+			image_html = '<img src="'+val.bordered+'" alt="">';
+			$('.slideshow').append(image_html);
+		});
+		//runCycle();
+	}
 
-	runCycle();
 }// fillSlideshow
 
 function runCycle(){
@@ -129,7 +125,7 @@ function runCycle(){
 		timeout: 		0,
 		prev: 			'.cycle-prev',
 		next: 			'.cycle-next',
-		log: 			false
+		log: 			true
 	});
 }// runCycle
 
@@ -167,7 +163,7 @@ function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
 		//console.log(category);
 		var menu_item_html = '<li><a href="#">'+category.name+'</a>';
-			
+
 		if(category.subcats.length == 0){
 			menu_item_html += '</li>';
 			$('#menu ul').append(menu_item_html);
@@ -190,10 +186,10 @@ function fillMenuCategories(categories){
 /**
 * Show/hide related products in the single page
 **/
-function toggleRelatedProducts(){
-	console.log('toggleRelatedProducts');
+function toggleRelatedProducts(clickedElement){
 	if ( $('.product-grid-wrapper').hasClass('hide') ){
 		runMasonry('.product-grid', '.item');
+		//$(clickedElement).hide();
 		$('.product-grid-wrapper').fadeIn('fast');
 		$('.product-grid-wrapper').removeClass('hide').addClass('open');
 		return;

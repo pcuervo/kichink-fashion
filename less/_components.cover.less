@@ -14,6 +14,12 @@
 	color: @light;
 }
 
+.store-description{
+	display: none;
+	width: 64%;
+	margin: 0 auto;
+}
+
 .cover img{
 	display: block;
 	width: 150px;
@@ -26,6 +32,7 @@
 
 	&:hover{
 		bottom: 4px;
+		font-size: 25px;
 	}
 }
 
@@ -41,6 +48,7 @@
 	.store__info{
 		top: 70%;
 	}
+
 
 }
 
@@ -60,7 +68,8 @@
 		top: 82%;
 	}
 
-	.store__info h2{
+
+	.store-name{
 		margin-bottom: 0;
 	}
 
@@ -74,8 +83,33 @@
 \*------------------------------------*/
 @media (min-width: @medium) {
 
+	.store__info{
+		top: 74%;
+	}
+
+	.store-description{
+		display: block;
+		width: 75%;
+	}
+
 	.scroll-down{
 		font-size: 40px;
+	}
+
+
+}
+
+
+
+
+/*------------------------------------*\
+    #LARGE
+\*------------------------------------*/
+@media (min-width: @large) {
+
+	.store-description{
+		display: block;
+		width: 64%;
 	}
 
 }

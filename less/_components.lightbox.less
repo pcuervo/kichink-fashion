@@ -4,7 +4,7 @@
 	position: relative;
 }
 
-.slideshow, .sp-wrap{
+.slideshow{
 	width: 100%;
 	display: block !important;
 	margin: 0 auto !important;
@@ -14,9 +14,14 @@
 	position: relative;
 }
 
-.slideshow img, .sp-wrap img{
+.slideshow img{
 	max-width: 100%; height: auto;
 	padding: 0; margin: 0;
+}
+
+.slideshow .single-image{
+	display: block;
+	margin: 0 auto;
 }
 
 .sp-large{
@@ -62,7 +67,7 @@
 @media (min-width: @medium) {
 
 	.slider{
-		width: 66.66666664%; height: 100%;
+		width: 66.6667%; height: 100%;
 		margin-bottom: 0;
 		float: left;
 	}
