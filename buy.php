@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 15272;
+	$store->id 				= 4433;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -329,6 +329,7 @@
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
 					fillSlideshow(ajax_request.data[0].images);
+					runCycle();
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
 					//console.log(ajax_request.data[0]);
@@ -548,21 +549,9 @@
 	<script>
 		$(document).ready(function() {
 
-			$('.js-cycle-slideshow').cycle({
-				fx: 			'scrollHorz',
-				centerHorz: 	true,
-				centerVert: 	true,
-				swipe: 			true,
-				timeout: 		0,
-				prev: 			'.cycle-prev',
-				next: 			'.cycle-next',
-				log: 			false
-			});
-
 			$('.js-related-products').on('click', function(){
 				toggleRelatedProducts( this );
 			});
-
 
 		});
 	</script>

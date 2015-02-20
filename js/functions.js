@@ -34,17 +34,6 @@
 	#ON LOAD
 \*------------------------------------*/
 
-//Show lightbox and run cycle
-function cycleSlider(){
-	$('.cycle-slideshow').cycle({
-		fx 			: "scrollHorz",
-		swipe 		: "true",
-		timeout 	: "0",
-		centerHorz 	: "true",
-		centerVert 	: "true"
-	});
-}
-
 
 /**
 * Check if .item elemets have been loaded and execute mansory
@@ -121,11 +110,9 @@ function fillSlideshow(images){
 			image_html = '<img src="'+val.bordered+'" alt="">';
 			$('.slideshow').append(image_html);
 		});
+		//runCycle();
 	}
 
-
-
-	runCycle();
 }// fillSlideshow
 
 function runCycle(){
@@ -137,7 +124,7 @@ function runCycle(){
 		timeout: 		0,
 		prev: 			'.cycle-prev',
 		next: 			'.cycle-next',
-		log: 			false
+		log: 			true
 	});
 }// runCycle
 

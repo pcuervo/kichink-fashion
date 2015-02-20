@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 15272;
+	$store->id 				= 4433;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -160,7 +160,7 @@
 		<footer>
 			<div class="[ wrapper ]">
 				<h2 class="[ text-center ]">Comparte esta tienda</h2>
-				<ul class="[ rrssb-buttons ] [ margin-bottom--small ]">
+				<ul class="[ rrssb-buttons ][ clearfix ][ margin-bottom--small ]">
 					<li class="rrssb-facebook">
 						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url; ?>" class="popup">
 							<span class="rrssb-icon">
