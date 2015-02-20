@@ -113,7 +113,7 @@ function fillSlideshow(images){
 	if(images.length <= 1) $('.cycle-controls').hide();
 
 	$.each(images, function(i, val){
-		image_html = '<img src="'+val.bordered+'" alt="">';
+		var image_html = '<img src="'+val.bordered+'" alt="">';
 		$('.slideshow').append(image_html);
 	});
 
@@ -156,6 +156,7 @@ function mostrarDisponibilidad(disponiblilidad_obj){
 }
 
 function fillStoreDetails(name, description, logo, cover){
+	document.title = name + ' - Kichink!';
 	$('.store-name').text(name);
 	$('.store-description').text(description);
 	$('.cover').css('background-image', 'url('+cover+')');
@@ -204,6 +205,13 @@ function toggleRelatedProducts(){
 		return;
 	}
 }
+
+function fillRelatedProducts(related_products){
+	$.each(related_products, function(i, product){
+		// related-product-grid
+		console.log(product);
+	})
+}// fillRelatedProducts
 
 
 /*------------------------------------*\

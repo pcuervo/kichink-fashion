@@ -13,7 +13,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="cleartype" content="on">
-		<title><?php echo $store->name; ?> - Kichink!</title>
+		<title></title>
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="<?php echo $og_description; ?>">
@@ -101,7 +101,7 @@
 						<div class="[ columna xmall-4 ][ menu__item ]">
 							<h1 class="">
 								<a class="[ block center ]" href="/">
-									<img class="[ img-circle ][ block center ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
+									<img class="[ img-circle ][ block center ] [ logo ]" src="#" alt="<?php echo $store->name; ?>" title="Inicio" />
 								</a>
 							</h1>
 						</div>
@@ -118,7 +118,7 @@
 						<div class="[ columna xmall-4 ][ menu__item ]">
 							<h1 class="">
 								<a class="[ block center ]" href="/">
-									<img class="[ img-circle ][ block center ]" src="<?php echo $store->logo; ?>" alt="<?php echo $store->name; ?>" title="Inicio" />
+									<img class="[ img-circle ][ block center ] [ logo ]" src="#" alt="<?php echo $store->name; ?>" title="Inicio" />
 								</a>
 							</h1>
 						</div>
@@ -268,7 +268,7 @@
 						<article class="[ text-center ][ margin-bottom ]">
 							<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ js-related-products ]">Ver productos relacionados</a>
 							<h2 class="shown--small">Artículos relacionados</h2>
-							<div class="[ product-grid-wrapper ][ hide ]">
+							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
 								<ul class="[ product-grid ]">
 									<li style="" id="item-10020" data-id="10020" class="item resizable"><a href="/buy/10020"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_10020_206_20130403174732_b.jpg" width="100%"><div class="items-data "><div class="items-name">Nave</div><div class="items-price">$ 20.00</div></div></a></li>
 									<li style="" id="item-36086" data-id="36086" class="item resizable"><a href="/buy/36086"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_36086_206_20130813134207_b.jpg" width="100%"><div class="items-data "><div class="items-name">rei</div><div class="items-price">$ 5.00</div></div></a></li>
@@ -330,7 +330,7 @@
 					fillSlideshow(ajax_request.data[0].images);
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
-					console.log(ajax_request.data[0]);
+					fillRelatedProducts(ajax_request.data[0].related);
 				}
 			});
 
@@ -346,6 +346,19 @@
 		});
 
 		itemsExist();
+
+		$.ajax({
+			type: "POST",
+			data: {
+				store_id: '<?= @$store->id ?>'
+			},
+			url: "https://www.kichink.com/api/stores/get_store_details",
+			success: function(data) {
+				var ajax_request = jQuery.parseJSON(data.toString());
+				fillStoreDetails(ajax_request.data.name, ajax_request.data.description, ajax_request.data.logo, ajax_request.data.header);
+				fillMenuCategories(ajax_request.data.categories);
+			}
+		});
 
 		function load_item(data, animated) {
 			if (data != undefined) {
@@ -537,26 +550,8 @@
 			return 0;
 		}
 
-
-
-	</script>
-
-	<!-- /********************************\ -->
-		<!-- #TRIGGERED EVENTS -->
-	<!-- \********************************/ -->
-	<script>
 		$(document).ready(function() {
 
-			$('.js-cycle-slideshow').cycle({
-				fx: 			'scrollHorz',
-				centerHorz: 	true,
-				centerVert: 	true,
-				swipe: 			true,
-				timeout: 		0,
-				prev: 			'.cycle-prev',
-				next: 			'.cycle-next',
-				log: 			false
-			});
 
 			$('.js-related-products').on('click', function(){
 				toggleRelatedProducts();
@@ -564,5 +559,9 @@
 
 
 		});
+
+
+
 	</script>
+
 </html>

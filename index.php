@@ -22,7 +22,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="cleartype" content="on">
-		<title><?php echo $store->name; ?> - Kichink!</title>
+		<title></title>
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="<?php echo $og_description; ?>">
