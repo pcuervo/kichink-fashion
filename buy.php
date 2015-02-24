@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 4433;
+	$store->id 				= 6785;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -316,6 +316,7 @@
 		$(document).ready(function() {
 			var store_id = <?php echo $store->id ?>;
 			var item_id = <?php echo $item_id; ?>;
+
 			$.ajax({
 				type: "POST",
 				data: {
@@ -328,11 +329,13 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
+					console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
 					runCycle();
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
 					fillRelatedProducts(ajax_request.data[0].related);
+					
 				}
 			});
 

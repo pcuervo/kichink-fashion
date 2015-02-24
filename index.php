@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 4433;
+	$store->id 				= 6785;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -75,26 +75,6 @@
 							</a>
 						</li>
 					</div><!-- shown--small -->
-					<li><a href="http://fofwebdesign.co.uk/">Mujeres</a> <label for="fof" class="toggle-sub" onclick="">&#9658;</label>
-						<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/>
-						<ul id="fof-sub" class="sub-nav">
-							<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label>
-							<li class="sub-heading">Mujeres </li>
-							<li><a href="#">Faldas</a></li>
-							<li><a href="#">Tacones</a></li>
-						</ul>
-					</li>
-					<li><a href="http://fast-edit.co.uk/">Hombres</a></li>
-					<li><a href="http://fast-apps.co.uk/">Niños</a> <label for="fast-apps" class="toggle-sub" onclick="">&#9658;</label>
-						<input type="checkbox" name="nav" id="fast-apps" class="sub-nav-check"/>
-						<ul id="fast-apps-sub" class="sub-nav">
-							<label for="fast-apps" class="[ toggle back ]" onclick="" title="Back">Atras</label>
-							<li class="sub-heading">Niños</li>
-							<li><a href="#">Juguetes</a></li>
-							<li><a href="#">Carreolas</a></li>
-						</ul>
-					</li>
-					<li><a href="http://www.dynamicdrive.com/">Accesorios</a></li>
 				</ul>
 			</div><!-- closing "#menu" -->
 		</div><!-- sidr -->

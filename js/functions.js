@@ -205,7 +205,7 @@ function toggleRelatedProducts(clickedElement){
 function fillRelatedProducts(related_products){
 	$.each(related_products, function(i, product){
 		// related-product-grid
-		console.log(product);
+		//console.log(product);
 	})
 }// fillRelatedProducts
 
