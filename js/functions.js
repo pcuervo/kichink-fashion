@@ -206,7 +206,7 @@ function fillRelatedProducts(related_products){
 	$.each(related_products, function(i, product){
 		var html_related_product = ' \
 			<li style="" data-id="'+product.id+'" class="item resizable"> \
-				<a href="/buy.php?id='+product.id+'"> \
+				<a href="/kichink-fashion/buy.php?id='+product.id+'"> \
 					<img nopin="nopin" src="'+product.image+'" width="100%"> \
 					<div class="items-data "> \
 						<div class="items-name">'+product.name+'</div> \
@@ -215,7 +215,6 @@ function fillRelatedProducts(related_products){
 				</a> \
 			</li>';
 		$('.related-product-grid ul').append(html_related_product);
-		console.log(html_related_product);
 	})
 }// fillRelatedProducts
 
