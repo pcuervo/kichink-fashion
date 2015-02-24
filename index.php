@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 6785;
+	$store->id 				= 148;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
