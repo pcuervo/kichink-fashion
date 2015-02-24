@@ -271,10 +271,10 @@
 							<h2 class="shown--small">Artículos relacionados</h2>
 							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
 								<ul class="[ product-grid ]">
-									<li style="" id="item-10020" data-id="10020" class="item resizable"><a href="/buy/10020"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_10020_206_20130403174732_b.jpg" width="100%"><div class="items-data "><div class="items-name">Nave</div><div class="items-price">$ 20.00</div></div></a></li>
+									<!-- <li style="" id="item-10020" data-id="10020" class="item resizable"><a href="/buy/10020"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_10020_206_20130403174732_b.jpg" width="100%"><div class="items-data "><div class="items-name">Nave</div><div class="items-price">$ 20.00</div></div></a></li>
 									<li style="" id="item-36086" data-id="36086" class="item resizable"><a href="/buy/36086"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_36086_206_20130813134207_b.jpg" width="100%"><div class="items-data "><div class="items-name">rei</div><div class="items-price">$ 5.00</div></div></a></li>
 									<li style="" id="item-369990" data-id="369990" class="item resizable"><a href="/buy/369990"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_369990_25389_20141018120049_b.jpg" width="100%"><div class="items-data "><div class="items-name">JABONNNNNN</div><div class="items-price">$ 300.00</div></div></a></li>
-									<li style="" id="item-28221" data-id="28221" class="item resizable"><a href="/buy/28221"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_28221_206_20130722162748_b.jpg" width="100%"><div class="items-data "><div class="items-name">Rei bici</div><div class="items-price">$ 200.00</div></div></a></li>
+									<li style="" id="item-28221" data-id="28221" class="item resizable"><a href="/buy/28221"><img nopin="nopin" src="https://s3.amazonaws.com/kichink/items_28221_206_20130722162748_b.jpg" width="100%"><div class="items-data "><div class="items-name">Rei bici</div><div class="items-price">$ 200.00</div></div></a></li> -->
 								</ul>
 								<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
 							</div>
@@ -329,7 +329,7 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
-					console.log(ajax_request.data[0]);
+					//console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
 					runCycle();
 					load_item(ajax_request.data[0], false);
