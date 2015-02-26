@@ -187,17 +187,17 @@ function fillMenuCategories(categories){
 * Show/hide related products in the single page
 **/
 function toggleRelatedProducts(clickedElement){
-	if ( $('.product-grid-wrapper').hasClass('hide') ){
-		runMasonry('.product-grid', '.item');
+	if ( $('section.product-grid-wrapper').hasClass('hide') ){
+		runMasonry('section.product-grid-wrapper .product-grid', '.item');
 		//$(clickedElement).hide();
-		$('.product-grid-wrapper').fadeIn('fast');
-		$('.product-grid-wrapper').removeClass('hide').addClass('open');
+		$('section.product-grid-wrapper').fadeIn('fast');
+		$('section.product-grid-wrapper').removeClass('hide').addClass('open');
 		return;
 	}
 
-	if ( $('.product-grid-wrapper').hasClass('open') ){
-		$('.product-grid-wrapper').fadeOut('fast');
-		$('.product-grid-wrapper').removeClass('open').addClass('hide');
+	if ( $('section.product-grid-wrapper').hasClass('open') ){
+		$('section.product-grid-wrapper').fadeOut('fast');
+		$('section.product-grid-wrapper').removeClass('open').addClass('hide');
 		return;
 	}
 }
@@ -214,7 +214,7 @@ function fillRelatedProducts(related_products){
 					</div> \
 				</a> \
 			</li>';
-		$('.related-product-grid ul').append(html_related_product);
+		$('.product-grid').append(html_related_product);
 	})
 }// fillRelatedProducts
 

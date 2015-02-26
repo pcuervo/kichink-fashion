@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 148;
+	$store->id 				= 18609;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -268,7 +268,7 @@
 						<article class="[ text-center ][ margin-bottom ]">
 							<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ js-related-products ]">Ver productos relacionados</a>
 							<h2 class="shown--small">Artículos relacionados</h2>
-							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
+							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ][ shown--small ]">
 								<ul class="[ product-grid ]">
 								</ul>
 								<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
@@ -280,6 +280,13 @@
 					<h2 class="[ font-serif ][ no-margin-bottom ]">$1,200</h2>
 					<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 					<p class="[ no-margin-bottom ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
+				</section>
+				<section class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
+					<ul class="[ product-grid ]">
+					</ul>
+					<div class="[ text-center ]">
+						<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
+					</div><!-- text-center -->
 				</section>
 			</div><!-- main -->
 		</div><!-- container -->
