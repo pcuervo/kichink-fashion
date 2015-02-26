@@ -234,22 +234,16 @@
 						<article class="[ product__options ] [ row ] [ margin-bottom ]">
 							<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
 							<div id="opc" class="btn-group" data-toggle="buttons"></div>
-							<div class="[ margin-bottom ]">
-								<h3 class="[ text-center font-serif ]">Tallas</h3>
+							<div class="[ margin-bottom ] [ opciones ]">
+								<h3 class="[ text-center font-serif ]">Color</h3>
 								<div class="[ text-center ]">
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
+									
 								</div>
 							</div><!-- margin-bottom -->
-							<div class="[ margin-bottom ]">
-								<h3 class="[ text-center font-serif ]">Colores</h3>
+							<div class="[ margin-bottom ] [ subopciones ] [ hidden--xmall ]">
+								<h3 class="[ text-center font-serif ]">Talla</h3>
 								<div class="[ text-center ]">
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">azul</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ selected ]">negro</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">blanco</a>
+									
 								</div>
 							</div><!-- margin-bottom -->
 						</article>
@@ -329,12 +323,13 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
-					//console.log(ajax_request.data[0]);
+					console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
 					runCycle();
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
 					fillRelatedProducts(ajax_request.data[0].related);
+					mostrarOpcionesDeCompra(ajax_request.data[0].purchase_options[0]);
 
 				}
 			});

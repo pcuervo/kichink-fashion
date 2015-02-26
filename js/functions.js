@@ -218,6 +218,33 @@ function fillRelatedProducts(related_products){
 	})
 }// fillRelatedProducts
 
+function mostrarOpcionesDeCompra(opciones){
+	var opciones_compra = [];
+	var opcion_actual = '';
+	var opcion_anterior = '';
+	var subopcion_actual = '';
+
+	$.each(opciones, function(i, opcion){
+
+		if(opcion.label.indexOf(':')>-1){
+			opciones_arr = opcion.label.split(':');
+			opcion_actual = opciones_arr[0];
+			subopcion_actual = opciones_arr[1];
+		}
+
+		if(opcion_actual != opcion_anterior){
+			var html_opcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ '+opcion_actual+' ]">'+opcion_actual+'</a> ';
+			$('.opciones div').append(html_opcion);
+			opcion_anterior = opcion_actual;
+		}
+
+		var html_subopcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ '+opcion_actual+' ]">'+subopcion_actual+'</a> ';
+		$('.subopciones div').append(html_subopcion);
+		
+	});
+	console.log(opciones_compra);
+}// mostrarOpcionesDeCompra
+
 
 /*------------------------------------*\
 	#RESPONSIVE
