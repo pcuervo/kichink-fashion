@@ -218,8 +218,7 @@ function fillRelatedProducts(related_products){
 	})
 }// fillRelatedProducts
 
-function mostrarOpcionesDeCompra(opciones){
-	var opciones_compra = [];
+function agregaOpcionesDeCompra(opciones){
 	var opcion_actual = '';
 	var opcion_anterior = '';
 	var subopcion_actual = '';
@@ -233,17 +232,40 @@ function mostrarOpcionesDeCompra(opciones){
 		}
 
 		if(opcion_actual != opcion_anterior){
-			var html_opcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ '+opcion_actual+' ]">'+opcion_actual+'</a> ';
+			var html_opcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ]" data-opcion="'+opcion_actual+'">'+opcion_actual+'</a> ';
 			$('.opciones div').append(html_opcion);
 			opcion_anterior = opcion_actual;
 		}
 
-		var html_subopcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ '+opcion_actual+' ]">'+subopcion_actual+'</a> ';
-		$('.subopciones div').append(html_subopcion);
-		
+		if(subopcion_actual != ''){
+			var html_subopcion = '<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ hidden--xmall ]" data-opcion="'+opcion_actual+'" data-subopcion="'+subopcion_actual+'">'+subopcion_actual+'</a> ';
+			$('.subopciones div').append(html_subopcion);
+		}
 	});
-	console.log(opciones_compra);
+
+	if(opciones.length>0) $('.product__options').removeClass('hidden--xmall');
 }// mostrarOpcionesDeCompra
+
+function toggleOpcionCompra(opcion){
+	if($(opcion).hasClass('selected')){
+		$(opcion).removeClass('selected');
+		escondeSubOpcion(data_opcion);
+	} else {
+		$(opcion).addClass('selected');
+		var data_opcion = opcion.data('opcion');
+		muestraSubOpcion(data_opcion);
+	}
+}// toggleOpcionCompra
+
+function muestraSubOpcion(opcion){
+	var opciones = $('.subopciones').find('[data-opcion="'+opcion+'"]').removeClass('hidden--xmall');
+	$('.subopciones').removeClass('hidden--xmall');
+}// muestraSubOpcion
+
+function escondeSubOpcion(opcion){
+	$('.subopciones').addClass('hidden--xmall');
+	var opciones = $('.subopciones').find('[data-opcion="'+opcion+'"]').addClass('hidden--xmall');
+}// escondeSubOpcion
 
 
 /*------------------------------------*\

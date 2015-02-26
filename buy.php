@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 18609;
+	$store->id 				= 15272;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -231,10 +231,10 @@
 								<p class="[  ]"></p>
 							</div><!-- product__info--price -->
 						</article>
-						<article class="[ product__options ] [ row ] [ margin-bottom ]">
+						<article class="[ product__options ] [ row ] [ margin-bottom ] [ hidden--xmall ]">
 							<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
 							<div id="opc" class="btn-group" data-toggle="buttons"></div>
-							<div class="[ margin-bottom ] [ opciones ]">
+							<div class="[ margin-bottom ] [ opciones ] ">
 								<h3 class="[ text-center font-serif ]">Color</h3>
 								<div class="[ text-center ]">
 									
@@ -336,9 +336,13 @@
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
 					fillRelatedProducts(ajax_request.data[0].related);
-					mostrarOpcionesDeCompra(ajax_request.data[0].purchase_options[0]);
+					agregaOpcionesDeCompra(ajax_request.data[0].purchase_options[0]);
 
 				}
+			});
+
+			$('.opciones').on('click', 'a', function(e){
+				toggleOpcionCompra($(this));
 			});
 
 			// Carga carrito dinámicamente
