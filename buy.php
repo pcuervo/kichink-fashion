@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 148;
+	$store->id 				= 18609;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
