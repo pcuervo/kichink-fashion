@@ -356,7 +356,7 @@
 			});
 		});
 
-		itemsExist();
+		//itemsExist();
 
 		$.ajax({
 			type: "POST",

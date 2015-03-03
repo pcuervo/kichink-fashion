@@ -189,7 +189,7 @@ function fillMenuCategories(categories){
 **/
 function toggleRelatedProducts(clickedElement){
 	if ( $('section.product-grid-wrapper').hasClass('hide') ){
-		runMasonry('section.product-grid-wrapper .product-grid', '.item');
+		//runMasonry('section.product-grid-wrapper .product-grid', '.item');
 		//$(clickedElement).hide();
 		$('section.product-grid-wrapper').fadeIn('fast');
 		$('section.product-grid-wrapper').removeClass('hide').addClass('open');
@@ -206,7 +206,7 @@ function toggleRelatedProducts(clickedElement){
 function fillRelatedProducts(related_products){
 	$.each(related_products, function(i, product){
 		var html_related_product = ' \
-			<li style="" data-id="'+product.id+'" class="item resizable"> \
+			<li style="" data-id="'+product.id+'" class="[ item ][ resizable ][ columna xmall-4 ]"> \
 				<a href="/kichink-fashion/buy.php?id='+product.id+'"> \
 					<img nopin="nopin" src="'+product.image+'" width="100%"> \
 					<div class="items-data "> \
