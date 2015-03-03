@@ -262,11 +262,11 @@
 						<article class="[ text-center ][ margin-bottom ]">
 							<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ js-related-products ]">Ver productos relacionados</a>
 							<h2 class="shown--small">Artículos relacionados</h2>
-							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ][ shown--small ]">
+							<section class="[ product-grid-wrapper ][ hide ][ related-product-grid ][ shown--small ]">
 								<ul class="[ product-grid ]">
 								</ul>
 								<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
-							</div>
+							</section>
 						</article>
 					</div><!-- wrapper -->
 				</section><!-- product__info -->
@@ -275,7 +275,7 @@
 					<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
 					<p class="[ no-margin-bottom ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
 				</section>
-				<section class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
+				<section class="[ product-grid-wrapper ][ related-product-grid ]">
 					<ul class="[ product-grid ]">
 					</ul>
 					<div class="[ text-center ]">

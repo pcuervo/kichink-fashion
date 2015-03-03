@@ -29,7 +29,7 @@
 **/
 @media (min-width: @small) {
 	.shown--small{ }
-	.hidden--small{ }
+	.hidden--small{ display: none !important; }
 }
 
 /**
@@ -38,6 +38,7 @@
 @media (min-width: @medium) {
 
 	.shown--small{ display: none !important; }
+	.hidden--small{ display: block !important; }
 
 	.shown--medium{ display: block !important; }
 	.shown--medium--inline-block{ display: inline-block !important; }

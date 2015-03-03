@@ -267,6 +267,23 @@ function escondeSubOpcion(opcion){
 	var opciones = $('.subopciones').find('[data-opcion="'+opcion+'"]').addClass('hidden--xmall');
 }// escondeSubOpcion
 
+function toggleMasonry(flag){
+	var container = $('.product-grid');
+	var msnry = new Masonry( container, {
+	  columnWidth: 60
+	});
+	// var isActive = true;
+
+	// eventie.bind( button, 'click', function() {
+	//   if ( isActive ) {
+	//     msnry.destroy();
+	//   } else {
+	//     msnry = new Masonry( container );
+	//   }
+	//   isActive = !isActive;
+	// });
+}
+
 
 /*------------------------------------*\
 	#RESPONSIVE
