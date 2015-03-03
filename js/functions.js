@@ -47,7 +47,8 @@ function itemsExist(){
 		var itemsLenght = $('.product-grid .item').length;
 
 		if ( itemsLenght > 0 ){
-			runMasonry('.product-grid', '.item');
+			//runMasonry('.product-grid', '.item');
+			toggleGridType('uniforme')
 			clearInterval(interval);
 		}
 
@@ -267,21 +268,18 @@ function escondeSubOpcion(opcion){
 	var opciones = $('.subopciones').find('[data-opcion="'+opcion+'"]').addClass('hidden--xmall');
 }// escondeSubOpcion
 
-function toggleMasonry(flag){
-	var container = $('.product-grid');
-	var msnry = new Masonry( container, {
-	  columnWidth: 60
-	});
-	// var isActive = true;
-
-	// eventie.bind( button, 'click', function() {
-	//   if ( isActive ) {
-	//     msnry.destroy();
-	//   } else {
-	//     msnry = new Masonry( container );
-	//   }
-	//   isActive = !isActive;
-	// });
+function toggleGridType(type){
+	switch(type){
+		case 'uniforme':
+			$('.item img').css('height', '350px');
+			$('.items-name').css('height', '100px');
+			break;
+		default:
+			$('.item img').css('width', '100%');
+			$('.item img').css('height', 'auto');
+			$('.items-name').css('height', 'auto');
+	}
+	runMasonry('.product-grid', '.item');
 }
 
 

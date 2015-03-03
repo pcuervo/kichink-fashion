@@ -254,13 +254,7 @@
 					onSuccess: itemsExist
 				});
 
-				// $(".js-login").LoginForm({
-				// 	lang: 'en',
-				// 	username: 'Roberto Romero',
-				// 	hasSession: true,
-				// 	type: 		'button'
-				// });
-
+				// Carga información de tienda
 				$.ajax({
 					type: "POST",
 					data: {
